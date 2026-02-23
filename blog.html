@@ -33,7 +33,6 @@
                 </svg>
             </a>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html" class="nav-link">Ana Sayfa</a></li>
                 <li class="nav-dropdown">
                     <a href="index.html#hakkimizda" class="nav-link nav-link-dropdown">Hakkımızda <i
                             class="ph ph-caret-down"></i></a>
@@ -45,18 +44,23 @@
                         <li><a href="neden-mier.html">Neden MİER?</a></li>
                     </ul>
                 </li>
-                <li class="nav-dropdown">
-                    <a href="hizmetler.html" class="nav-link nav-link-dropdown">Hizmetler <i
-                            class="ph ph-caret-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="hizmetler.html">Hizmetlerimiz</a></li>
-                        <li><a href="tedavilerimiz.html">Tedavilerimiz</a></li>
-                    </ul>
-                </li>
+                <li><a href="tedavilerimiz.html" class="nav-link">Tedavilerimiz</a></li>
                 <li><a href="galeri.html" class="nav-link">Galeri</a></li>
                 <li><a href="blog.html" class="nav-link active">Blog</a></li>
                 <li><a href="sss.html" class="nav-link">SSS</a></li>
                 <li><a href="iletisim.html" class="nav-link">İletişim</a></li>
+                
+                <li class="nav-dropdown lang-dropdown">
+                    <a href="#" class="nav-link currentLang"><i class="ph ph-globe"></i> TR <i class="ph ph-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" class="lang-option" data-lang="tr">🇹🇷 Türkçe</a></li>
+                        <li><a href="#" class="lang-option" data-lang="en">🇬🇧 English</a></li>
+                        <li><a href="#" class="lang-option" data-lang="de">🇩🇪 Deutsch</a></li>
+                        <li><a href="#" class="lang-option" data-lang="ar">🇸🇦 العربية</a></li>
+                        <li><a href="#" class="lang-option" data-lang="ru">🇷🇺 Русский</a></li>
+                        <li><a href="#" class="lang-option" data-lang="fr">🇫🇷 Français</a></li>
+                    </ul>
+                </li>
                 <li><a href="randevu.html" class="nav-link nav-cta">Randevu Al</a></li>
             </ul>
             <button class="nav-toggle" id="navToggle"
@@ -80,8 +84,9 @@
         <div class="container">
             <div class="blog-grid">
                 <article class="blog-card" data-aos="fade-up">
-                    <div class="blog-card-image" style="background: linear-gradient(135deg, #E8EDF3, #D5DEED);"><i
-                            class="ph-fill ph-tooth" style="font-size: 3rem; color: #253B5B;"></i></div>
+                    <div class="blog-card-image">
+                        <img src="images/blog/blog_implant.png" alt="İmplant Tedavisi" style="width:100%; height:100%; object-fit:cover;">
+                    </div>
                     <div class="blog-card-content">
                         <div class="blog-meta"><span><i class="ph ph-calendar"></i> 10 Şubat 2026</span><span><i
                                     class="ph ph-clock"></i> 5 dk</span></div>
@@ -92,8 +97,9 @@
                     </div>
                 </article>
                 <article class="blog-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="blog-card-image" style="background: linear-gradient(135deg, #F7F0E3, #EDE3CC);"><i
-                            class="ph-fill ph-sparkle" style="font-size: 3rem; color: #C9A96E;"></i></div>
+                    <div class="blog-card-image">
+                        <img src="images/blog/blog_whitening.png" alt="Diş Beyazlatma" style="width:100%; height:100%; object-fit:cover;">
+                    </div>
                     <div class="blog-card-content">
                         <div class="blog-meta"><span><i class="ph ph-calendar"></i> 05 Şubat 2026</span><span><i
                                     class="ph ph-clock"></i> 4 dk</span></div>
@@ -104,8 +110,9 @@
                     </div>
                 </article>
                 <article class="blog-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="blog-card-image" style="background: linear-gradient(135deg, #E8EDF3, #CFD8E3);"><i
-                            class="ph-fill ph-baby" style="font-size: 3rem; color: #3A5A80;"></i></div>
+                    <div class="blog-card-image">
+                        <img src="images/blog/blog_pediatric.png" alt="Çocuk Diş Bakımı" style="width:100%; height:100%; object-fit:cover;">
+                    </div>
                     <div class="blog-card-content">
                         <div class="blog-meta"><span><i class="ph ph-calendar"></i> 30 Ocak 2026</span><span><i
                                     class="ph ph-clock"></i> 6 dk</span></div>
@@ -115,8 +122,9 @@
                     </div>
                 </article>
                 <article class="blog-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="blog-card-image" style="background: linear-gradient(135deg, #EBF0F5, #D2DCE9);"><i
-                            class="ph-fill ph-smiley" style="font-size: 3rem; color: #253B5B;"></i></div>
+                    <div class="blog-card-image">
+                        <img src="images/blog/blog_ortho.png" alt="Ortodonti Tedavisi" style="width:100%; height:100%; object-fit:cover;">
+                    </div>
                     <div class="blog-card-content">
                         <div class="blog-meta"><span><i class="ph ph-calendar"></i> 25 Ocak 2026</span><span><i
                                     class="ph ph-clock"></i> 5 dk</span></div>
@@ -126,8 +134,9 @@
                     </div>
                 </article>
                 <article class="blog-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="blog-card-image" style="background: linear-gradient(135deg, #FDF8F0, #F0E4CC);"><i
-                            class="ph-fill ph-first-aid-kit" style="font-size: 3rem; color: #C9A96E;"></i></div>
+                    <div class="blog-card-image">
+                        <img src="images/blog/blog_rootcanal.png" alt="Kanal Tedavisi" style="width:100%; height:100%; object-fit:cover;">
+                    </div>
                     <div class="blog-card-content">
                         <div class="blog-meta"><span><i class="ph ph-calendar"></i> 20 Ocak 2026</span><span><i
                                     class="ph ph-clock"></i> 4 dk</span></div>
@@ -137,8 +146,9 @@
                     </div>
                 </article>
                 <article class="blog-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="blog-card-image" style="background: linear-gradient(135deg, #E8EDF3, #D1DAE8);"><i
-                            class="ph-fill ph-heart" style="font-size: 3rem; color: #253B5B;"></i></div>
+                    <div class="blog-card-image">
+                        <img src="images/blog/blog_brushing.png" alt="Doğru Diş Fırçalama" style="width:100%; height:100%; object-fit:cover;">
+                    </div>
                     <div class="blog-card-content">
                         <div class="blog-meta"><span><i class="ph ph-calendar"></i> 15 Ocak 2026</span><span><i
                                     class="ph ph-clock"></i> 3 dk</span></div>
@@ -177,7 +187,7 @@
                     <h4>Hızlı Erişim</h4>
                     <ul>
                         <li><a href="index.html">Ana Sayfa</a></li>
-                        <li><a href="hizmetler.html">Hizmetler</a></li>
+                        <li><a href="tedavilerimiz.html">Tedavilerimiz</a></li>
                         <li><a href="galeri.html">Galeri</a></li>
                         <li><a href="blog.html">Blog</a></li>
                         <li><a href="sss.html">SSS</a></li>
@@ -195,20 +205,42 @@
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 Mier Dental Clinic. Tüm hakları saklıdır.</p>
-                <div class="footer-bottom-links"><a href="#">KVKK</a><a href="#">Çerez Politikası</a><a
-                        href="#">Gizlilik</a></div>
+                <div class="footer-bottom-links">
+                    <a href="kvkk.html">KVKK Politikası</a>
+                    <a href="cerez-politikasi.html">Çerez Politikası</a>
+                    <a href="gizlilik.html">Gizlilik Sözleşmesi</a>
+                </div>
             </div>
         </div>
     </footer>
     <button class="back-to-top" id="backToTop" aria-label="Sayfa başına dön"><i class="ph ph-caret-up"></i></button>
     <div class="cookie-banner" id="cookieBanner">
         <div class="cookie-content">
-            <p><i class="ph ph-cookie"></i> Bu web sitesi çerezler kullanmaktadır. <a href="#">Çerez politikamız</a></p>
+            <p><i class="ph ph-cookie"></i> Bu web sitesi çerezler kullanmaktadır. <a href="cerez-politikasi.html">Çerez politikamız</a></p>
             <div class="cookie-buttons"><button class="btn btn-outline btn-sm" id="cookieReject">Reddet</button><button
                     class="btn btn-primary btn-sm" id="cookieAccept">Kabul Et</button></div>
         </div>
     </div>
     <script src="script.js"></script>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/905555555555?text=Merhaba,%20randevu%20almak%20istiyorum." class="whatsapp-float" target="_blank" aria-label="WhatsApp ile İletişime Geçin">
+        <i class="ph ph-whatsapp-logo"></i>
+    </a>
+
+
+    <!-- Google Translate Script -->
+    <div id="google_translate_element" style="display:none;"></div>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'tr',
+                includedLanguages: 'tr,en,de,ar,ru,fr',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 
 </html>

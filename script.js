@@ -492,6 +492,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         });
+
+        // Check for ?tab= parameter in URL on load
+        const urlParams = new URLSearchParams(window.location.search);
+        const tabParam = urlParams.get('tab');
+
+        if (tabParam) {
+            const targetTab = Array.from(treatmentTabs).find(t => t.getAttribute('data-tab') === tabParam);
+            if (targetTab) {
+                targetTab.click();
+                setTimeout(() => {
+                    const tabsContainer = document.querySelector('.treatment-tabs');
+                    if (tabsContainer) {
+                        const yOffset = -120; // Offset for fixed navbar
+                        const y = tabsContainer.getBoundingClientRect().top + window.scrollY + yOffset;
+                        window.scrollTo({ top: y, behavior: 'smooth' });
+                    }
+                }, 100);
+            }
+        }
     }
 
     // ===== CONTACT FORM =====
@@ -569,3 +588,125 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    // MASONRY LIGHTBOX
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const lightbox = document.getElementById('lightbox');
+
+    if (lightbox && galleryItems.length > 0) {
+        // Clear previous lightbox content safely
+        const contentDiv = document.getElementById('lightboxContent');
+        if (contentDiv) contentDiv.innerHTML = '';
+
+        let lightboxImg = document.createElement('img');
+        if (contentDiv) {
+            contentDiv.appendChild(lightboxImg);
+        } else {
+            lightbox.appendChild(lightboxImg);
+        }
+
+        const closeBtn = document.getElementById('lightboxClose');
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const imgNode = item.querySelector('img');
+                if (imgNode) {
+                    lightboxImg.src = imgNode.src;
+                    lightbox.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        }
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox || e.target.id === 'lightboxContent') {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Gallery Filter handling for Masonry
+        const filterBtns = document.querySelectorAll('.gallery-filter-btn');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+                galleryItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = 'inline-block'; // Required for CSS column breaking natively
+                        item.style.width = '100%';
+                        setTimeout(() => item.style.opacity = '1', 50);
+                    } else {
+                        item.style.display = 'none';
+                        item.style.opacity = '0';
+                    }
+                });
+            });
+        });
+    }
+});
+
+// ===== CUSTOM MULTILANGUAGE =====
+document.addEventListener('DOMContentLoaded', () => {
+    const langOptions = document.querySelectorAll('.lang-option');
+    // Using querySelectorAll to find the active language toggles safely
+    const currentLangTexts = document.querySelectorAll('.currentLang');
+
+    // Function to trigger Google Translate dropdown
+    function changeLanguage(langCode) {
+        const selectBox = document.querySelector('.goog-te-combo');
+        if (selectBox) {
+            selectBox.value = langCode;
+            // The google translate dropdown requires valid DOM events to trigger change
+            selectBox.dispatchEvent(new Event('change'));
+        }
+    }
+
+    // Set active based on cookie if available
+    const match = document.cookie.match(/googtrans=\/tr\/([a-z]{2})/);
+    if (match && match[1]) {
+        currentLangTexts.forEach(el => {
+            el.innerHTML = '<i class="ph ph-globe"></i> ' + match[1].toUpperCase() + ' <i class="ph ph-caret-down"></i>';
+        });
+    }
+
+    langOptions.forEach(option => {
+        option.addEventListener('click', (e) => {
+            e.preventDefault();
+            const lang = option.getAttribute('data-lang');
+
+            currentLangTexts.forEach(el => {
+                el.innerHTML = '<i class="ph ph-globe"></i> ' + lang.toUpperCase() + ' <i class="ph ph-caret-down"></i>';
+            });
+
+            // Check if google API is injected yet
+            const selectBox = document.querySelector('.goog-te-combo');
+            if (selectBox) {
+                changeLanguage(lang);
+            } else {
+                // if clicked very fast, retry after 500ms
+                setTimeout(() => { changeLanguage(lang); }, 500);
+            }
+
+            // Close mobile menu if open
+            const navMenu = document.getElementById('navMenu');
+            const navToggle = document.getElementById('navToggle');
+            if (navMenu && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                if (navToggle) navToggle.classList.remove('active');
+            }
+        });
+    });
+});
+
+// Duplicate FAQ block removed

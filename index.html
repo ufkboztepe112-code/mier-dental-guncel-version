@@ -67,7 +67,6 @@
                 </svg>
             </a>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html" class="nav-link active">Ana Sayfa</a></li>
                 <li class="nav-dropdown">
                     <a href="index.html#hakkimizda" class="nav-link nav-link-dropdown">Hakkımızda <i
                             class="ph ph-caret-down"></i></a>
@@ -79,18 +78,24 @@
                         <li><a href="neden-mier.html">Neden MİER?</a></li>
                     </ul>
                 </li>
-                <li class="nav-dropdown">
-                    <a href="hizmetler.html" class="nav-link nav-link-dropdown">Hizmetler <i
-                            class="ph ph-caret-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="hizmetler.html">Hizmetlerimiz</a></li>
-                        <li><a href="tedavilerimiz.html">Tedavilerimiz</a></li>
-                    </ul>
-                </li>
+                <li><a href="tedavilerimiz.html" class="nav-link">Tedavilerimiz</a></li>
                 <li><a href="galeri.html" class="nav-link">Galeri</a></li>
                 <li><a href="blog.html" class="nav-link">Blog</a></li>
                 <li><a href="sss.html" class="nav-link">SSS</a></li>
                 <li><a href="iletisim.html" class="nav-link">İletişim</a></li>
+
+                <li class="nav-dropdown lang-dropdown">
+                    <a href="#" class="nav-link currentLang"><i class="ph ph-globe"></i> TR <i
+                            class="ph ph-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" class="lang-option" data-lang="tr">🇹🇷 Türkçe</a></li>
+                        <li><a href="#" class="lang-option" data-lang="en">🇬🇧 English</a></li>
+                        <li><a href="#" class="lang-option" data-lang="de">🇩🇪 Deutsch</a></li>
+                        <li><a href="#" class="lang-option" data-lang="ar">🇸🇦 العربية</a></li>
+                        <li><a href="#" class="lang-option" data-lang="ru">🇷🇺 Русский</a></li>
+                        <li><a href="#" class="lang-option" data-lang="fr">🇫🇷 Français</a></li>
+                    </ul>
+                </li>
                 <li><a href="randevu.html" class="nav-link nav-cta">Randevu Al</a></li>
             </ul>
             <button class="nav-toggle" id="navToggle" aria-label="Menüyü aç/kapat">
@@ -101,6 +106,10 @@
 
     <!-- ===== HERO ===== -->
     <section id="anasayfa" class="hero-section">
+        <video class="hero-bg-video" autoplay loop muted playsinline>
+            <source src="images/klinik-video.mp4" type="video/mp4">
+        </video>
+        <div class="hero-bg-overlay"></div>
         <div class="hero-bg-shapes">
             <div class="shape shape-1"></div>
             <div class="shape shape-2"></div>
@@ -125,9 +134,9 @@
                         <i class="ph ph-calendar-plus"></i>
                         Randevu Al
                     </a>
-                    <a href="hizmetler.html" class="btn btn-outline btn-lg">
+                    <a href="tedavilerimiz.html" class="btn btn-outline btn-lg">
                         <i class="ph ph-arrow-right"></i>
-                        Hizmetlerimiz
+                        Tedavilerimiz
                     </a>
                 </div>
                 <div class="hero-trust">
@@ -261,6 +270,56 @@
         </div>
     </section>
 
+    <!-- ===== BEFORE/AFTER SLIDER ===== -->
+    <section class="section before-after-section" id="before-after">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-aos="fade-up">Öncesi & Sonrası</span>
+                <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Değişimi <span
+                        class="gradient-text">Gözlerinizle Görün</span></h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Uzman hekimlerimizin dokunuşlarıyla
+                    elde edilen inanılmaz sonuçları deneyimleyin. Ortadaki oku sağa sola kaydırarak inceleyebilirsiniz.
+                </p>
+            </div>
+
+            <div class="ba-slider-container" data-aos="fade-up" data-aos-delay="300">
+                <!-- After Image (Background) -->
+                <img src="images/smile_after.png" alt="Tedavi Sonrası Güzel Dişler" class="ba-img ba-img-cover">
+                <span class="ba-label after">Sonrası</span>
+
+                <!-- Before Image (Clipped overlay) -->
+                <div class="ba-before" style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%); width: 100%;">
+                    <img src="images/smile_before.png" alt="Tedavi Öncesi Sararmış Dişler" class="ba-img ba-img-cover">
+                    <span class="ba-label before">Öncesi</span>
+                </div>
+
+                <!-- Range Slider -->
+                <div class="ba-slider">
+                    <input type="range" min="0" max="100" value="50" class="ba-range" oninput="
+                        const container = this.closest('.ba-slider-container');
+                        const beforeImg = container.querySelector('.ba-before');
+                        const line = container.querySelector('.ba-line');
+                        const btn = container.querySelector('.ba-btn');
+                        
+                        beforeImg.style.clipPath = 'polygon(0 0, ' + this.value + '% 0, ' + this.value + '% 100%, 0 100%)';
+                        line.style.left = this.value + '%';
+                        btn.style.left = this.value + '%';
+                    ">
+                </div>
+
+                <!-- Divider Line & Button -->
+                <div class="ba-line"></div>
+                <div class="ba-btn">
+                    <i class="ph-bold ph-arrows-left-right"></i>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;" data-aos="fade-up" data-aos-delay="400">
+                <a href="randevu.html" class="btn btn-primary btn-lg">Siz Değerli Gülüşünüze Kavuşun <i
+                        class="ph ph-calendar-plus"></i></a>
+            </div>
+        </div>
+    </section>
+
     <!-- ===== HİZMET ÖZETİ ===== -->
     <section class="section services-section">
         <div class="container">
@@ -271,137 +330,363 @@
                     çözümler.</p>
             </div>
             <div class="services-grid">
-                <div class="service-card service-card--icon" data-aos="fade-up">
-                    <div class="service-icon"><i class="ph-fill ph-tooth"></i></div>
-                    <h3>Dolgu Tedavisi</h3>
-                    <p>Çürük ve hasarlı dişlerinizi estetik dolgu malzemeleriyle onarıyoruz.</p>
-                    <a href="hizmetler.html" class="service-link">Detaylar <i class="ph ph-arrow-right"></i></a>
+                <div class="service-card" data-aos="fade-up">
+                    <div class="service-card-image">
+                        <img src="images/services/dolgu_tedavisi.png" alt="Dolgu Tedavisi - Mier Dental Clinic">
+                    </div>
+                    <div class="service-card-body">
+                        <div class="service-icon"><i class="ph-fill ph-tooth"></i></div>
+                        <h3>Dolgu Tedavisi</h3>
+                        <p>Çürük ve hasarlı dişlerinizi estetik dolgu malzemeleriyle onarıyoruz.</p>
+                        <a href="tedavilerimiz.html?tab=dolgu" class="service-link">Detaylar <i
+                                class="ph ph-arrow-right"></i></a>
+                    </div>
                 </div>
-                <div class="service-card service-card--icon" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-icon"><i class="ph-fill ph-sparkle"></i></div>
-                    <h3>Tartar Temizliği</h3>
-                    <p>Profesyonel diş taşı temizliği ile diş eti sağlığınızı koruyoruz.</p>
-                    <a href="hizmetler.html" class="service-link">Detaylar <i class="ph ph-arrow-right"></i></a>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card-image">
+                        <img src="images/services/tartar_temizligi.png" alt="Tartar Temizliği - Mier Dental Clinic">
+                    </div>
+                    <div class="service-card-body">
+                        <div class="service-icon"><i class="ph-fill ph-sparkle"></i></div>
+                        <h3>Tartar Temizliği</h3>
+                        <p>Profesyonel diş taşı temizliği ile diş eti sağlığınızı koruyoruz.</p>
+                        <a href="tedavilerimiz.html?tab=tartar" class="service-link">Detaylar <i
+                                class="ph ph-arrow-right"></i></a>
+                    </div>
                 </div>
-                <div class="service-card service-card--icon" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-icon"><i class="ph-fill ph-wrench"></i></div>
-                    <h3>İmplant Tedavisi</h3>
-                    <p>Eksik dişleriniz için kalıcı ve doğal görünümlü implant çözümleri.</p>
-                    <a href="hizmetler.html" class="service-link">Detaylar <i class="ph ph-arrow-right"></i></a>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card-image">
+                        <img src="images/services/implant_tedavisi.png" alt="İmplant Tedavisi - Mier Dental Clinic">
+                    </div>
+                    <div class="service-card-body">
+                        <div class="service-icon"><i class="ph-fill ph-wrench"></i></div>
+                        <h3>İmplant Tedavisi</h3>
+                        <p>Eksik dişleriniz için kalıcı ve doğal görünümlü implant çözümleri.</p>
+                        <a href="tedavilerimiz.html?tab=implant" class="service-link">Detaylar <i
+                                class="ph ph-arrow-right"></i></a>
+                    </div>
                 </div>
-                <div class="service-card service-card--icon" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-icon"><i class="ph-fill ph-activity"></i></div>
-                    <h3>Kanal Tedavisi</h3>
-                    <p>Enfekte olmuş dişlerinizi kurtarmak için ağrısız ve modern endodontik tedaviler.</p>
-                    <a href="tedavilerimiz.html" class="service-link">Detaylar <i class="ph ph-arrow-right"></i></a>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card-image">
+                        <img src="images/services/kanal_tedavisi.png" alt="Kanal Tedavisi - Mier Dental Clinic">
+                    </div>
+                    <div class="service-card-body">
+                        <div class="service-icon"><i class="ph-fill ph-activity"></i></div>
+                        <h3>Kanal Tedavisi</h3>
+                        <p>Enfekte olmuş dişlerinizi kurtarmak için ağrısız ve modern endodontik tedaviler.</p>
+                        <a href="tedavilerimiz.html?tab=kanal" class="service-link">Detaylar <i
+                                class="ph ph-arrow-right"></i></a>
+                    </div>
                 </div>
-                <div class="service-card service-card--icon" data-aos="fade-up" data-aos-delay="400">
-                    <div class="service-icon"><i class="ph-fill ph-smiley"></i></div>
-                    <h3>Ortodonti</h3>
-                    <p>Çapraşık dişlerinizi düzeltmek için şeffaf plak veya tel tedavileri.</p>
-                    <a href="tedavilerimiz.html" class="service-link">Detaylar <i class="ph ph-arrow-right"></i></a>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-card-image">
+                        <img src="images/services/ortodonti.png" alt="Ortodonti - Mier Dental Clinic">
+                    </div>
+                    <div class="service-card-body">
+                        <div class="service-icon"><i class="ph-fill ph-smiley"></i></div>
+                        <h3>Ortodonti</h3>
+                        <p>Çapraşık dişlerinizi düzeltmek için şeffaf plak veya tel tedavileri.</p>
+                        <a href="tedavilerimiz.html?tab=ortodonti" class="service-link">Detaylar <i
+                                class="ph ph-arrow-right"></i></a>
+                    </div>
                 </div>
-                <div class="service-card service-card--icon" data-aos="fade-up" data-aos-delay="500">
-                    <div class="service-icon"><i class="ph-fill ph-camera"></i></div>
-                    <h3>Gülüş Tasarımı</h3>
-                    <p>Size en yakışan estetik gülüşü dijital teknolojilerle tasarlıyoruz.</p>
-                    <a href="hizmetler.html" class="service-link">Detaylar <i class="ph ph-arrow-right"></i></a>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-card-image">
+                        <img src="images/services/gulus_tasarimi.png" alt="Gülüş Tasarımı - Mier Dental Clinic">
+                    </div>
+                    <div class="service-card-body">
+                        <div class="service-icon"><i class="ph-fill ph-camera"></i></div>
+                        <h3>Gülüş Tasarımı</h3>
+                        <p>Size en yakışan estetik gülüşü dijital teknolojilerle tasarlıyoruz.</p>
+                        <a href="tedavilerimiz.html?tab=estetik" class="service-link">Detaylar <i
+                                class="ph ph-arrow-right"></i></a>
+                    </div>
                 </div>
             </div>
             <div style="text-align: center; margin-top: 40px;">
-                <a href="hizmetler.html" class="btn btn-outline">Tüm Hizmetleri Görüntüle <i
+                <a href="tedavilerimiz.html" class="btn btn-outline">Tüm Tedavileri Görüntüle <i
                         class="ph ph-arrow-right"></i></a>
             </div>
         </div>
-    </section>
-
-    <!-- ===== CTA BANNER ===== -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content glass-card">
-                <div class="cta-text">
-                    <h2>Sağlıklı Bir Gülüş İçin İlk Adımı Atın</h2>
-                    <p>Ücretsiz ön muayene için hemen randevu alın. Uzman kadromuz sizi bekliyor.</p>
+        <!-- ===== GOOGLE YORUMLARI ===== -->
+        <section class="section google-reviews-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Müşteri Yorumları</span>
+                    <h2 class="section-title">Mutlu <span class="gradient-text">Müşterilerimiz</span></h2>
+                    <p class="section-subtitle">Hastalarımızın memnuniyeti bizim için her şeyden önemli. İşte hakkımızda
+                        söylenenler.</p>
                 </div>
-                <a href="randevu.html" class="btn btn-primary btn-lg">
-                    <i class="ph ph-calendar-plus"></i> Hemen Randevu Al
-                </a>
-            </div>
-        </div>
-    </section>
 
-    <!-- ===== FOOTER ===== -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="index.html" class="footer-logo">
-                        <i class="ph ph-tooth"></i>
-                        <span>Mier <strong>Dental Clinic</strong></span>
-                    </a>
-                    <p>Profesyonel diş hekimliğinin kurumsal adresi. Sağlıklı gülüşler için yanınızdayız.</p>
-                    <div class="footer-social">
-                        <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
-                        <a href="#" aria-label="Facebook"><i class="ph ph-facebook-logo"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="ph ph-twitter-logo"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="ph ph-youtube-logo"></i></a>
+                <div class="reviews-grid">
+                    <!-- Review 1 -->
+                    <div class="review-card glass-card" data-aos="fade-up">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <div class="reviewer-avatar">ZK</div>
+                                <div>
+                                    <h4>Zeynep Kul</h4>
+                                    <span class="review-date">Bir ay önce</span>
+                                </div>
+                            </div>
+                            <div class="review-platform">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+                                    alt="Google Logo" width="24" height="24">
+                            </div>
+                        </div>
+                        <div class="review-stars">
+                            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i>
+                        </div>
+                        <p class="review-text">Korkum yüzünden uzun zamandır dişlerimi ihmal etmiştim ve açıkçası durum
+                            pek iyi değildi. “Bir gideyim artık” diyerek randevu aldım ve iyi ki de almışım. Feyza…</p>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div class="review-card glass-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <div class="reviewer-avatar">EG</div>
+                                <div>
+                                    <h4>Esma Nur Güler</h4>
+                                    <span class="review-date">3 ay önce</span>
+                                </div>
+                            </div>
+                            <div class="review-platform">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+                                    alt="Google Logo" width="24" height="24">
+                            </div>
+                        </div>
+                        <div class="review-stars">
+                            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i>
+                        </div>
+                        <p class="review-text">Hem ilgi alakaları hem de kullandıkları kaliteli malzemeler sayesinde
+                            tedavim kusursuz geçiyor. Kliniğin temizliği ve profesyonelliği gerçekten takdire şayan .…
+                        </p>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div class="review-card glass-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <div class="reviewer-avatar">EA</div>
+                                <div>
+                                    <h4>ELİF DUYGU AŞKIN</h4>
+                                    <span class="review-date">4 ay önce</span>
+                                </div>
+                            </div>
+                            <div class="review-platform">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+                                    alt="Google Logo" width="24" height="24">
+                            </div>
+                        </div>
+                        <div class="review-stars">
+                            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i>
+                        </div>
+                        <p class="review-text">Uzun yillardir gerek kendim, gerek cocuklarim icin dis problemlerimizde
+                            destek aldigimiz Sinem Hanim ve Bahadir Bey’in, uzman ekip arkadaslari ile; tertemiz,…</p>
+                    </div>
+
+                    <!-- Review 4 -->
+                    <div class="review-card glass-card" data-aos="fade-up">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <div class="reviewer-avatar">ÖŞ</div>
+                                <div>
+                                    <h4>ömer şahin</h4>
+                                    <span class="review-date">4 ay önce</span>
+                                </div>
+                            </div>
+                            <div class="review-platform">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+                                    alt="Google Logo" width="24" height="24">
+                            </div>
+                        </div>
+                        <div class="review-stars">
+                            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i>
+                        </div>
+                        <p class="review-text">Mier Dental Clinic’te hizmet aldım ve gerçekten çok memnun kaldım.
+                            Özellikle Bahadır hocanın pozitif ve güler yüzlü yaklaşımı, tüm süreci çok rahat ve güven…
+                        </p>
+                    </div>
+
+                    <!-- Review 5 -->
+                    <div class="review-card glass-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <div class="reviewer-avatar">EB</div>
+                                <div>
+                                    <h4>Elanur Bağrıyanık</h4>
+                                    <span class="review-date">2 ay önce</span>
+                                </div>
+                            </div>
+                            <div class="review-platform">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+                                    alt="Google Logo" width="24" height="24">
+                            </div>
+                        </div>
+                        <div class="review-stars">
+                            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i>
+                        </div>
+                        <p class="review-text">20'lik ve kökünde kist oluşan iki dişimi çektim. Ve gayet memnunum. Asla
+                            çekimden sonra bir ağrı, sızı olmadı. Yüzüm şişmedi, morarmadı. Çok iyi bir ameliyat…</p>
+                    </div>
+
+                    <!-- Review 6 -->
+                    <div class="review-card glass-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <div class="reviewer-avatar">SU</div>
+                                <div>
+                                    <h4>Sağra Uğur</h4>
+                                    <span class="review-date">3 ay önce</span>
+                                </div>
+                            </div>
+                            <div class="review-platform">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+                                    alt="Google Logo" width="24" height="24">
+                            </div>
+                        </div>
+                        <div class="review-stars">
+                            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i>
+                        </div>
+                        <p class="review-text">Hem dolgu hem diş çekimi işlemlerimi burada yaptırdım, gerçekten çok
+                            memnun kaldım. İşlerini titizlikle yapan, samimi ve güven veren bir ekip. Gönül rahatlığıyla
+                            tercih edebilirsiniz.</p>
                     </div>
                 </div>
-                <div class="footer-links">
-                    <h4>Hızlı Erişim</h4>
-                    <ul>
-                        <li><a href="index.html">Ana Sayfa</a></li>
-                        <li><a href="index.html#hakkimizda">Hakkımızda</a></li>
-                        <li><a href="hizmetler.html">Hizmetler</a></li>
-                        <li><a href="galeri.html">Galeri</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="sss.html">SSS</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Hizmetlerimiz</h4>
-                    <ul>
-                        <li><a href="hizmetler.html">Dolgu Tedavisi</a></li>
-                        <li><a href="hizmetler.html">Tartar Temizliği</a></li>
-                        <li><a href="hizmetler.html">İmplant Tedavisi</a></li>
-                        <li><a href="tedavilerimiz.html">Tedavilerimiz</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h4>İletişim</h4>
-                    <ul>
-                        <li><i class="ph ph-map-pin"></i> İsmetpaşa Mah. Kenar Cad. Gün Işığı Sit. J1 Blok No:4CG,
-                            Bayrampaşa/İstanbul</li>
-                        <li><i class="ph ph-phone"></i> +90 (___) ___ __ __</li>
-                        <li><i class="ph ph-envelope"></i> info@mierdental.com</li>
-                        <li><i class="ph ph-clock"></i> Pzt-Cum: 09:00-19:00 | Cmt: 09:00-14:00</li>
-                    </ul>
+
+                <div style="text-align: center; margin-top: 50px;">
+                    <a href="https://www.google.com/search?uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-krZrbWIimbBhISByURS8lXBmTXvz107swt6zVJLF3yfZ74qqZSLrILG1D5M8eqV8kS85aErP6dKQO3o-2xSMI0WEYPRfbDk_3r8QgTveJ0dCbZCvQ9yeXnf5Ej_8MbqY6MvrSdHmdgZNGIYIi4QFXr1BEVwR8mC7HpPyNkIHf0lJIuIN&q=Mier%20A%C4%9F%C4%B1z%20ve%20Di%C5%9F%20Sa%C4%9Fl%C4%B1%C4%9F%C4%B1%20Poliklini%C4%9Fi%20Yorumlar&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOe59tihO8TSZ2A-2OpRZIZt2bXZZ1z8-Ab7cwFVlPQIamsZprucPLPKv5OEvsBiylc8hjhZiIhgvj0eYpD5ZLGcRXAzP-qxiVBkSQsK5a6-GgiKOcYAFOsumUTJXIkXZsp_l9M0%3D&cs=1&hl=tr&sa=X&ved=0CCoQ_4MLahcKEwjIgrKJuu-SAxUAAAAAHQAAAAAQBg&biw=1920&bih=993&dpr=1"
+                        target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+                        Tüm Yorumları Gör <i class="ph ph-arrow-right"></i>
+                    </a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Mier Dental Clinic. Tüm hakları saklıdır.</p>
-                <div class="footer-bottom-links">
-                    <a href="#">KVKK Politikası</a>
-                    <a href="#">Çerez Politikası</a>
-                    <a href="#">Gizlilik Sözleşmesi</a>
+        </section>
+
+        <!-- ===== CTA BANNER ===== -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content glass-card">
+                    <div class="cta-text">
+                        <h2>Sağlıklı Bir Gülüş İçin İlk Adımı Atın</h2>
+                        <p>Ücretsiz ön muayene için hemen randevu alın. Uzman kadromuz sizi bekliyor.</p>
+                    </div>
+                    <a href="randevu.html" class="btn btn-primary btn-lg">
+                        <i class="ph ph-calendar-plus"></i> Hemen Randevu Al
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="index.html" class="footer-logo">
+                            <i class="ph ph-tooth"></i>
+                            <span>Mier <strong>Dental Clinic</strong></span>
+                        </a>
+                        <p>Profesyonel diş hekimliğinin kurumsal adresi. Sağlıklı gülüşler için yanınızdayız.</p>
+                        <div class="footer-social">
+                            <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+                            <a href="#" aria-label="Facebook"><i class="ph ph-facebook-logo"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="ph ph-twitter-logo"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="ph ph-youtube-logo"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Hızlı Erişim</h4>
+                        <ul>
+                            <li><a href="index.html">Ana Sayfa</a></li>
+                            <li><a href="index.html#hakkimizda">Hakkımızda</a></li>
+                            <li><a href="tedavilerimiz.html">Tedavilerimiz</a></li>
+                            <li><a href="galeri.html">Galeri</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="sss.html">SSS</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Tedavilerimiz</h4>
+                        <ul>
+                            <li><a href="tedavilerimiz.html?tab=implant">İmplant Tedavisi</a></li>
+                            <li><a href="tedavilerimiz.html?tab=dolgu">Dolgu Tedavisi</a></li>
+                            <li><a href="tedavilerimiz.html?tab=tartar">Tartar Temizliği</a></li>
+                            <li><a href="tedavilerimiz.html?tab=ortodonti">Ortodonti</a></li>
+                            <li><a href="tedavilerimiz.html?tab=estetik">Gülüş Tasarımı</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>İletişim</h4>
+                        <ul>
+                            <li><i class="ph ph-map-pin"></i> İsmetpaşa Mah. Kenar Cad. Gün Işığı Sit. J1 Blok No:4CG,
+                                Bayrampaşa/İstanbul</li>
+                            <li><i class="ph ph-phone"></i> +90 (___) ___ __ __</li>
+                            <li><i class="ph ph-envelope"></i> info@mierdental.com</li>
+                            <li><i class="ph ph-clock"></i> Pzt-Cum: 09:00-19:00 | Cmt: 09:00-14:00</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Mier Dental Clinic. Tüm hakları saklıdır.</p>
+                    <div class="footer-bottom-links">
+                        <a href="kvkk.html">KVKK Politikası</a>
+                        <a href="cerez-politikasi.html">Çerez Politikası</a>
+                        <a href="gizlilik.html">Gizlilik Sözleşmesi</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <button class="back-to-top" id="backToTop" aria-label="Sayfa başına dön"><i class="ph ph-caret-up"></i></button>
+
+        <div class="cookie-banner" id="cookieBanner">
+            <div class="cookie-content">
+                <p><i class="ph ph-cookie"></i> Bu web sitesi çerezler kullanmaktadır. <a
+                        href="cerez-politikasi.html">Çerez politikamız</a>
+                </p>
+                <div class="cookie-buttons">
+                    <button class="btn btn-outline btn-sm" id="cookieReject">Reddet</button>
+                    <button class="btn btn-primary btn-sm" id="cookieAccept">Kabul Et</button>
                 </div>
             </div>
         </div>
-    </footer>
 
-    <button class="back-to-top" id="backToTop" aria-label="Sayfa başına dön"><i class="ph ph-caret-up"></i></button>
+        <script src="script.js"></script>
 
-    <div class="cookie-banner" id="cookieBanner">
-        <div class="cookie-content">
-            <p><i class="ph ph-cookie"></i> Bu web sitesi çerezler kullanmaktadır. <a href="#">Çerez politikamız</a></p>
-            <div class="cookie-buttons">
-                <button class="btn btn-outline btn-sm" id="cookieReject">Reddet</button>
-                <button class="btn btn-primary btn-sm" id="cookieAccept">Kabul Et</button>
-            </div>
-        </div>
-    </div>
+        <!-- WhatsApp Float -->
+        <a href="https://wa.me/905555555555?text=Merhaba,%20randevu%20almak%20istiyorum." class="whatsapp-float"
+            target="_blank" aria-label="WhatsApp ile İletişime Geçin">
+            <i class="ph ph-whatsapp-logo"></i>
+        </a>
 
-    <script src="script.js"></script>
+
+        <!-- Google Translate Script -->
+        <div id="google_translate_element" style="display:none;"></div>
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({
+                    pageLanguage: 'tr',
+                    includedLanguages: 'tr,en,de,ar,ru,fr',
+                    autoDisplay: false
+                }, 'google_translate_element');
+            }
+        </script>
+        <script type="text/javascript"
+            src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 
 </html>

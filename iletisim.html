@@ -33,7 +33,6 @@
                 </svg>
             </a>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html" class="nav-link">Ana Sayfa</a></li>
                 <li class="nav-dropdown">
                     <a href="index.html#hakkimizda" class="nav-link nav-link-dropdown">Hakkımızda <i
                             class="ph ph-caret-down"></i></a>
@@ -45,18 +44,23 @@
                         <li><a href="neden-mier.html">Neden MİER?</a></li>
                     </ul>
                 </li>
-                <li class="nav-dropdown">
-                    <a href="hizmetler.html" class="nav-link nav-link-dropdown">Hizmetler <i
-                            class="ph ph-caret-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="hizmetler.html">Hizmetlerimiz</a></li>
-                        <li><a href="tedavilerimiz.html">Tedavilerimiz</a></li>
-                    </ul>
-                </li>
+                <li><a href="tedavilerimiz.html" class="nav-link">Tedavilerimiz</a></li>
                 <li><a href="galeri.html" class="nav-link">Galeri</a></li>
                 <li><a href="blog.html" class="nav-link">Blog</a></li>
                 <li><a href="sss.html" class="nav-link">SSS</a></li>
                 <li><a href="iletisim.html" class="nav-link active">İletişim</a></li>
+                
+                <li class="nav-dropdown lang-dropdown">
+                    <a href="#" class="nav-link currentLang"><i class="ph ph-globe"></i> TR <i class="ph ph-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" class="lang-option" data-lang="tr">🇹🇷 Türkçe</a></li>
+                        <li><a href="#" class="lang-option" data-lang="en">🇬🇧 English</a></li>
+                        <li><a href="#" class="lang-option" data-lang="de">🇩🇪 Deutsch</a></li>
+                        <li><a href="#" class="lang-option" data-lang="ar">🇸🇦 العربية</a></li>
+                        <li><a href="#" class="lang-option" data-lang="ru">🇷🇺 Русский</a></li>
+                        <li><a href="#" class="lang-option" data-lang="fr">🇫🇷 Français</a></li>
+                    </ul>
+                </li>
                 <li><a href="randevu.html" class="nav-link nav-cta">Randevu Al</a></li>
             </ul>
             <button class="nav-toggle" id="navToggle"
@@ -163,7 +167,7 @@
                     <h4>Hızlı Erişim</h4>
                     <ul>
                         <li><a href="index.html">Ana Sayfa</a></li>
-                        <li><a href="hizmetler.html">Hizmetler</a></li>
+                        <li><a href="tedavilerimiz.html">Tedavilerimiz</a></li>
                         <li><a href="galeri.html">Galeri</a></li>
                         <li><a href="blog.html">Blog</a></li>
                         <li><a href="sss.html">SSS</a></li>
@@ -181,20 +185,42 @@
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 Mier Dental Clinic. Tüm hakları saklıdır.</p>
-                <div class="footer-bottom-links"><a href="#">KVKK</a><a href="#">Çerez Politikası</a><a
-                        href="#">Gizlilik</a></div>
+                <div class="footer-bottom-links">
+                    <a href="kvkk.html">KVKK Politikası</a>
+                    <a href="cerez-politikasi.html">Çerez Politikası</a>
+                    <a href="gizlilik.html">Gizlilik Sözleşmesi</a>
+                </div>
             </div>
         </div>
     </footer>
     <button class="back-to-top" id="backToTop" aria-label="Sayfa başına dön"><i class="ph ph-caret-up"></i></button>
     <div class="cookie-banner" id="cookieBanner">
         <div class="cookie-content">
-            <p><i class="ph ph-cookie"></i> Bu web sitesi çerezler kullanmaktadır. <a href="#">Çerez politikamız</a></p>
+            <p><i class="ph ph-cookie"></i> Bu web sitesi çerezler kullanmaktadır. <a href="cerez-politikasi.html">Çerez politikamız</a></p>
             <div class="cookie-buttons"><button class="btn btn-outline btn-sm" id="cookieReject">Reddet</button><button
                     class="btn btn-primary btn-sm" id="cookieAccept">Kabul Et</button></div>
         </div>
     </div>
     <script src="script.js"></script>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/905555555555?text=Merhaba,%20randevu%20almak%20istiyorum." class="whatsapp-float" target="_blank" aria-label="WhatsApp ile İletişime Geçin">
+        <i class="ph ph-whatsapp-logo"></i>
+    </a>
+
+
+    <!-- Google Translate Script -->
+    <div id="google_translate_element" style="display:none;"></div>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'tr',
+                includedLanguages: 'tr,en,de,ar,ru,fr',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 
 </html>

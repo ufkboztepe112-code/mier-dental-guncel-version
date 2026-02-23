@@ -1,137 +1,23 @@
-<!DOCTYPE html>
-<html lang="tr">
+const fs = require('fs');
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tedavilerimiz | Mier Dental Clinic</title>
-    <meta name="description"
-        content="Mier Dental Clinic tedavi detayları. Her tedavi hakkında süreç, fiyat bilgisi ve sıkça sorulan sorular.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <script src="https://unpkg.com/@phosphor-icons/web@2.0.3"></script>
-    <link rel="stylesheet" href="style.css">
-</head>
+const file = 'c:/Users/ufkbo/Mier-Dental-Güncel Web/mier-dental-guncel-version/tedavilerimiz.html';
+let html = fs.readFileSync(file, 'utf8');
 
-<body>
-    <!-- ===== NAVIGATION ===== -->
-    <nav class="navbar" id="navbar">
-        <div class="container nav-container">
-            <a href="index.html" class="nav-logo">
-                <svg width="200" height="44" viewBox="0 0 200 44" xmlns="http://www.w3.org/2000/svg">
-                    <g transform="translate(2, 4)">
-                        <path
-                            d="M18 2c-3.5 0-6 1-7.5 2.5C9 6 8 8.5 8 11.5c0 1.8.4 3.3.9 5 .6 2 1.2 4 1.2 6.2 0 3.2-.8 5.8-1.6 8.3-.8 2.8-1.2 5-.8 7 .4 1.6 1.6 2.5 2.8 2.5s2-.8 2.8-2.5c.8-2 1.6-4.5 1.6-7.4h4.2c0 2.9.8 5.4 1.6 7.4.8 1.7 1.6 2.5 2.8 2.5s2.4-.9 2.8-2.5c.4-2 0-4.2-.8-7-.8-2.5-1.6-5.1-1.6-8.3 0-2.2.6-4.2 1.2-6.2.5-1.7.9-3.2.9-5 0-3-1-5.5-2.5-7C24 3 21.5 2 18 2z"
-                            fill="#C9A96E" opacity="0.9" />
-                    </g>
-                    <text x="46" y="22" font-family="'Poppins', sans-serif" font-size="18" font-weight="800"
-                        fill="#253B5B" letter-spacing="1">MIER</text>
-                    <text x="46" y="38" font-family="'Poppins', sans-serif" font-size="11" font-weight="500"
-                        fill="#253B5B" letter-spacing="3" opacity="0.7">DENTAL CLINIC</text>
-                </svg>
-            </a>
-            <ul class="nav-menu" id="navMenu">
-                <li class="nav-dropdown">
-                    <a href="index.html#hakkimizda" class="nav-link nav-link-dropdown">Hakkımızda <i
-                            class="ph ph-caret-down"></i></a>
-                    <ul class="dropdown-menu">
-
-                        <li><a href="misyonumuz.html">Misyonumuz</a></li>
-                        <li><a href="vizyonumuz.html">Vizyonumuz</a></li>
-                        <li><a href="degerlerimiz.html">Değerlerimiz</a></li>
-                        <li><a href="neden-mier.html">Neden MİER?</a></li>
-                    </ul>
-                </li>
-                <li><a href="tedavilerimiz.html" class="nav-link">Tedavilerimiz</a></li>
-                <li><a href="galeri.html" class="nav-link">Galeri</a></li>
-                <li><a href="blog.html" class="nav-link">Blog</a></li>
-                <li><a href="sss.html" class="nav-link">SSS</a></li>
-                <li><a href="iletisim.html" class="nav-link">İletişim</a></li>
-                
-                <li class="nav-dropdown lang-dropdown">
-                    <a href="#" class="nav-link currentLang"><i class="ph ph-globe"></i> TR <i class="ph ph-caret-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#" class="lang-option" data-lang="tr">🇹🇷 Türkçe</a></li>
-                        <li><a href="#" class="lang-option" data-lang="en">🇬🇧 English</a></li>
-                        <li><a href="#" class="lang-option" data-lang="de">🇩🇪 Deutsch</a></li>
-                        <li><a href="#" class="lang-option" data-lang="ar">🇸🇦 العربية</a></li>
-                        <li><a href="#" class="lang-option" data-lang="ru">🇷🇺 Русский</a></li>
-                        <li><a href="#" class="lang-option" data-lang="fr">🇫🇷 Français</a></li>
-                    </ul>
-                </li>
-                <li><a href="randevu.html" class="nav-link nav-cta">Randevu Al</a></li>
-            </ul>
-            <button class="nav-toggle" id="navToggle"
-                aria-label="Menüyü aç/kapat"><span></span><span></span><span></span></button>
-        </div>
-    </nav>
-
-    <!-- ===== PAGE BANNER ===== -->
-    <section class="page-banner">
-        <div class="container">
-            <div class="page-banner-content">
-                <span class="section-tag">Tedavilerimiz</span>
-                <h1 class="page-banner-title">Detaylı <span class="gradient-text">Tedavi Bilgileri</span></h1>
-                <p class="page-banner-subtitle">Her tedavi hakkında süreç, beklentiler ve sık sorulan sorular.</p>
-                <div class="breadcrumb">
-                    <a href="index.html">Ana Sayfa</a>
-                    <i class="ph ph-caret-right"></i>
-                    <a href="tedavilerimiz.html">Hizmetler</a>
-                    <i class="ph ph-caret-right"></i>
-                    <span>Tedavilerimiz</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== TEDAVİLER ===== -->
-    <section class="section treatments-section">
-        <div class="container">
-            <!-- Tedavi Navigation Tabs -->
-            <div class="treatment-tabs">
-                <button class="treatment-tab active" data-tab="implant"><i class="ph-fill ph-wrench"></i>
-                    İmplant</button>
-                <button class="treatment-tab" data-tab="dolgu"><i class="ph-fill ph-tooth"></i> Dolgu</button>
-                <button class="treatment-tab" data-tab="tartar"><i class="ph-fill ph-sparkle"></i> Tartar
-                    Temizliği</button>
-                <button class="treatment-tab" data-tab="ortodonti"><i class="ph-fill ph-smiley"></i> Ortodonti</button>
-                <button class="treatment-tab" data-tab="estetik"><i class="ph-fill ph-diamond"></i> Estetik</button>
-                <button class="treatment-tab" data-tab="kanal"><i class="ph-fill ph-first-aid-kit"></i> Kanal
-                    Tedavisi</button>
-            </div>
-
-            
-            <!-- İmplant Tedavisi -->
-            <div class="treatment-content active" id="tab-implant">
-                <div class="treatment-hero" style="flex-direction: column; align-items: stretch;">
-                    <div style="width: 100%; height: 350px; overflow: hidden; border-radius: var(--radius-lg); margin-bottom: 24px;">
-                        <img src="images/services/implant_tedavisi.png" alt="İmplant Tedavisi - Mier Dental Clinic" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 20px;">
-                        <div class="treatment-hero-icon"><i class="ph-fill ph-wrench"></i></div>
-                        <div>
-                            <h2>İmplant Tedavisi</h2>
-                            <p class="treatment-tagline">Eksik dişlerinize kalıcı, doğal ve güçlü çözüm</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="treatment-grid">
-                    <div class="treatment-detail-card" style="grid-column: 1 / -1; padding: 40px;">
-                        
+const tabs = [
+    {
+        id: 'tab-implant',
+        icon: 'ph-wrench',
+        title: 'İmplant Tedavisi',
+        tagline: 'Eksik dişlerinize kalıcı, doğal ve güçlü çözüm',
+        image: 'images/services/implant_tedavisi.png',
+        content: `
                         <h3><i class="ph ph-info"></i> Tedavi Hakkında Kapsamlı Bilgi</h3>
                         <p>Diş implantı, eksik dişlerin yerine çene kemiğine yerleştirilen, doku dostu titanyum vidalardır. Kemikle biyolojik olarak kaynaştıktan (osseointegrasyon) sonra üzerine porselen veya zirkonyum kron takılarak hem estetik hem de fonksiyonel olarak doğal diş görünümü sağlanır. Titanyum, insan vücudu ile en uyumlu materyallerden biri olduğu için vücut tarafından reddedilme riski yok denecek kadar azdır.</p>
                         <p>İmplant tedavisi yalnızca estetik bir çözüm değil, aynı zamanda sistemik sağlığınızı ve yaşam kalitenizi doğrudan etkileyen tıbbi bir gerekliliktir. Geleneksel köprü ve hareketli protez gibi alternatif çözümlere göre kıyaslanamayacak kadar kalıcı ve konforlu bir seçenektir. Geleneksel köprülerde boşluğun yanındaki sağlam dişlerin kesilmesi gerekirken, implant tedavisinde komşu dişlere kesinlikle dokunulmaz ve zarar verilmez.</p>
                         <p>Diş kaybı, estetik kaygıların ötesinde çene kemiğinde erimeye (rezorbsiyon) yol açar. İmplant, tıpkı doğal bir diş kökü gibi çene kemiğine baskı uygulayarak kemik erimesini durduran tek tedavi yöntemidir. Çiğneme fonksiyonunun tam olarak geri kazanılması, sindirim sistemi sorunlarının önüne geçerken, aynı zamanda konuşmadaki bozuklukları da düzelterek hastanın özgüvenini ciddi anlamda artırır.</p>
                         <p>Çeşitli kemik yetersizliklerinde (sinüs sarkması, kemik incelmesi vb.) ileri cerrahi teknikler olan Sinüs Lifting (sinüs tabanı yükseltme) ve kemik tozu (greft) uygulamaları ile implant yapımı için gerekli zemin başarıyla hazırlanabilmektedir. Böylece, yıllar önce dişini kaybetmiş hastalar bile güvenle implant tedavisi görebilmektedir.</p>
-        
-                    </div>
-                    <div class="treatment-detail-card">
-                        <h3><i class="ph ph-list-numbers"></i> Tedavi Süreci</h3>
-                        <div class="treatment-steps">
-                            
+        `,
+        steps: `
                             <div class="treatment-step">
                                 <span class="step-number">1</span>
                                 <div>
@@ -160,13 +46,8 @@
                                     <p>İyileşme tamamlandığında, dijital içi tarayıcılarla hassas ölçüler alınır. Laboratuvar ortamında hastanın yüz tipine, ten rengine ve diğer dişlerine mükemmel uyum sağlayan porselen veya zirkonyum kronlar üretilerek implantın üzerine sabitlenir.</p>
                                 </div>
                             </div>
-        
-                        </div>
-                    </div>
-                    <div class="treatment-detail-card">
-                        <h3><i class="ph ph-check-square"></i> Avantajlar ve Faydaları</h3>
-                        <ul class="treatment-advantages">
-                            
+        `,
+        advantages: `
                             <li><i class="ph-fill ph-check-circle"></i> Doğal dişten ayırt edilemeyen mükemmel kozmetik görünüm ve hissiyat</li>
                             <li><i class="ph-fill ph-check-circle"></i> Çevre dişlerin kesilmesine gerek kalmadan koruyucu tedavi</li>
                             <li><i class="ph-fill ph-check-circle"></i> Yaşam boyu süren konfor ve 25+ yıllık uzun ömür</li>
@@ -174,53 +55,22 @@
                             <li><i class="ph-fill ph-check-circle"></i> Ne yerseniz yiyin, korkmadan ısırma ve çiğneme özgürlüğü</li>
                             <li><i class="ph-fill ph-check-circle"></i> Hareketli protezlerde yaşanan vuruk, ağrı ve tutamama sorunlarına son</li>
                             <li><i class="ph-fill ph-check-circle"></i> Uluslararası sertifikalı malzemelerle 10 Yıl Kliniğimizin Garantisi</li>
-        
-                        </ul>
-                        
-                        <h3 style="margin-top: 30px;"><i class="ph ph-currency-circle-dollar"></i> Tedavi Fiyatlandırması</h3>
-                        <div class="price-range">
-                            <p>TDB (Türk Dişhekimleri Birliği) fiyat tarifesi baz alınarak, vakanın kompleks durumuna ve kullanılan güncel malzemeye göre kişiye özel planlama yapılır.</p>
-                            <div class="price-box">
-                                <span class="price-label">Başlangıç Fiyatı</span>
-                                <span class="price-value">Klinik Muayene Sonrası</span>
-                            </div>
-                            <p class="price-note"><i class="ph ph-info"></i> Kliniğimizde ödeme kolaylıkları ve vade farksız taksit seçeneklerimiz mevcuttur.</p>
-                        </div>
-                    </div>
-                </div>
-                <div style="text-align: center; margin-top: 40px;">
-                    <a href="randevu.html" class="btn btn-primary btn-lg"><i class="ph ph-calendar-plus"></i> İmplant Güşüşünüz İçin Randevu Alın</a>
-                </div>
-            </div>
-    
-            <!-- Estetik Dolgu Tedavisi -->
-            <div class="treatment-content " id="tab-dolgu">
-                <div class="treatment-hero" style="flex-direction: column; align-items: stretch;">
-                    <div style="width: 100%; height: 350px; overflow: hidden; border-radius: var(--radius-lg); margin-bottom: 24px;">
-                        <img src="images/services/dolgu_tedavisi.png" alt="Estetik Dolgu Tedavisi - Mier Dental Clinic" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 20px;">
-                        <div class="treatment-hero-icon"><i class="ph-fill ph-tooth"></i></div>
-                        <div>
-                            <h2>Estetik Dolgu Tedavisi</h2>
-                            <p class="treatment-tagline">Modern, dayanıklı ve bembeyaz dolgular ile dişlerinizi koruyoruz</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="treatment-grid">
-                    <div class="treatment-detail-card" style="grid-column: 1 / -1; padding: 40px;">
-                        
+        `
+    },
+    {
+        id: 'tab-dolgu',
+        icon: 'ph-tooth',
+        title: 'Estetik Dolgu Tedavisi',
+        tagline: 'Modern, dayanıklı ve bembeyaz dolgular ile dişlerinizi koruyoruz',
+        image: 'images/services/dolgu_tedavisi.png',
+        content: `
                         <h3><i class="ph ph-info"></i> Tedavi Hakkında Kapsamlı Bilgi</h3>
                         <p>Dolgu tedavisi, diş çürükleri, kırıklar veya aşınmalar nedeniyle madde kaybına uğramış dişlerin eski anatomik formuna, fonksiyonuna ve estetiğine geri kavuşturulması işlemidir. Modern diş hekimliğinde siyah renkli, cıva içeren ve sağlık tartışmalarına yol açan amalgam dolgular tamamen terk edilmiş, yerini diş rengiyle birebir aynı olan biyouyumlu nanoteknolojik kompozit dolgular ve tam seramik porselen (inley/onley) dolgular almıştır.</p>
                         <p>Kompozit dolgular, dişin sert dokusuna mikromekanik ve kimyasal bağlarla çok güçlü bir şekilde yapışır. Bu sayede, amalgam dolgularda olduğu gibi dolgunun dişte tutunabilmesi için dişte gereksiz fazladan oyuk açmaya gerek kalmaz (minimal invaziv yaklaşım). Başarılı bir dolgu tedavisi, dişin içindeki canlı dokuya (pulpa) çürüğün ilerlemesini durdurur ve acılı bir kanal tedavisine veya diş çekimine giden yolu baştan kapatır.</p>
                         <p>Ayrıca günümüzde estetik (kompozit) dolgular sadece çürük tedavisinde değil; ön dişlerdeki aralıkların kapatılmasında (diastema kapama), hafif çapraşıklıkların düzeltilmesinde, dişteki renk ve şekil anormalliklerinin giderilmesinde de sıklıkla tek seanslık çok pratik bir estetik restorasyon yönetemi (bonding) olarak kullanılmaktadır. İleri teknoloji led ışık cihazlarıyla sertleştirilen bu dolgular, hasta koltuktan kalktığı an yemek yemesi için hazırdır.</p>
                         <p>Klinik olarak daha büyük madde kayıplarında ise klasik kompozit dolgu yerine, ağız içinden dijital ölçü alınıp üç boyutlu yazıcı ve kazıyıcılarda (CAD/CAM) çok kısa sürede hazırlanan ve diş boşluğuna mükemmel oturan Porselen İnley/Onley dolgular tavsiye edilmektedir. Bu restorasyonlar hem çok daha estetik hem de dişi dışarıdan gelecek kırılmalara karşı adeta bir zırh gibi korumaktadır.</p>
-        
-                    </div>
-                    <div class="treatment-detail-card">
-                        <h3><i class="ph ph-list-numbers"></i> Tedavi Süreci</h3>
-                        <div class="treatment-steps">
-                            
+        `,
+        steps: `
                             <div class="treatment-step"><span class="step-number">1</span>
                                 <div><strong>Lokal Anestezi ve Çürük Temizliği</strong>
                                     <p>İşlem tamamen ağrısız olacak şekilde bölgesel lokal anestezi yapılır. Dişin hastalıklı, yumuşamış ve renklenmiş çürük dokusu özel aletlerle dişe en ufak zarar vermeyecek hassasiyette tamamen temizlenir ve sağlıklı bir zemin elde edilir.</p>
@@ -241,65 +91,29 @@
                                     <p>Yüksekte kalan noktalar çiğneme kağıtlarıyla kontrol edilerek ideal temas (oklüzyon) seviyesine ayarlanır. Son olarak diş yüzeyi pürüzsüz ve doğal diş minesi kadar parlak olacak şekilde mikroskobik disklerle parlatılır (polisaj).</p>
                                 </div>
                             </div>
-        
-                        </div>
-                    </div>
-                    <div class="treatment-detail-card">
-                        <h3><i class="ph ph-check-square"></i> Avantajlar ve Faydaları</h3>
-                        <ul class="treatment-advantages">
-                            
+        `,
+        advantages: `
                             <li><i class="ph-fill ph-check-circle"></i> Doğal dişinizden hiçbir şekilde ayırt edilemeyen, gülüşünüzle bütünleşen mükemmel estetik</li>
                             <li><i class="ph-fill ph-check-circle"></i> Güçlü kimyasal yapışma (Adeziv teknoloji) sayesinde düşme riski minimum olan restorasyonlar</li>
                             <li><i class="ph-fill ph-check-circle"></i> Tek bir randevuda, ağrısız sızısız 30-45 dakikada hızlıca tamamlanabilme</li>
                             <li><i class="ph-fill ph-check-circle"></i> Düzenli diş fırçalama ve ağız bakımı ile 10-15 yıla varan güvenilir uzun ömür</li>
                             <li><i class="ph-fill ph-check-circle"></i> İlerleyen dönemde kanal tedavisine veya diş kaybına engel olan kesin koruyucu yaklaşım</li>
-        
-                        </ul>
-                        
-                        <h3 style="margin-top: 30px;"><i class="ph ph-currency-circle-dollar"></i> Tedavi Fiyatlandırması</h3>
-                        <div class="price-range">
-                            <p>TDB (Türk Dişhekimleri Birliği) fiyat tarifesi baz alınarak, vakanın kompleks durumuna ve kullanılan güncel malzemeye göre kişiye özel planlama yapılır.</p>
-                            <div class="price-box">
-                                <span class="price-label">Başlangıç Fiyatı</span>
-                                <span class="price-value">Klinik Muayene Sonrası</span>
-                            </div>
-                            <p class="price-note"><i class="ph ph-info"></i> Kliniğimizde ödeme kolaylıkları ve vade farksız taksit seçeneklerimiz mevcuttur.</p>
-                        </div>
-                    </div>
-                </div>
-                <div style="text-align: center; margin-top: 40px;">
-                    <a href="randevu.html" class="btn btn-primary btn-lg"><i class="ph ph-calendar-plus"></i> Estetik Güşüşünüz İçin Randevu Alın</a>
-                </div>
-            </div>
-    
-            <!-- Tartar Temizliği ve Diş Eti Bakımı -->
-            <div class="treatment-content " id="tab-tartar">
-                <div class="treatment-hero" style="flex-direction: column; align-items: stretch;">
-                    <div style="width: 100%; height: 350px; overflow: hidden; border-radius: var(--radius-lg); margin-bottom: 24px;">
-                        <img src="images/services/tartar_temizligi.png" alt="Tartar Temizliği ve Diş Eti Bakımı - Mier Dental Clinic" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 20px;">
-                        <div class="treatment-hero-icon"><i class="ph-fill ph-sparkle"></i></div>
-                        <div>
-                            <h2>Tartar Temizliği ve Diş Eti Bakımı</h2>
-                            <p class="treatment-tagline">Sağlıklı diş etleri, sağlıklı bir bedenin başlangıcıdır</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="treatment-grid">
-                    <div class="treatment-detail-card" style="grid-column: 1 / -1; padding: 40px;">
-                        
+        `
+    },
+    {
+        id: 'tab-tartar',
+        icon: 'ph-sparkle',
+        title: 'Tartar Temizliği ve Diş Eti Bakımı',
+        tagline: 'Sağlıklı diş etleri, sağlıklı bir bedenin başlangıcıdır',
+        image: 'images/services/tartar_temizligi.png',
+        content: `
                         <h3><i class="ph ph-info"></i> Tedavi Hakkında Kapsamlı Bilgi</h3>
                         <p>Ağız içinde yemek artıkları, tükürükteki mineraller ve bakterilerin zamanla birleşmesiyle diş yüzeyinde önce ince ve renksiz bir bakteri plağı, sonrasında ise tükürükten çöken kalsiyum ve fosfat iyonlarının katılaşmasıyla sert, fırçalamayla asla çıkmayan diş taşı (tartar) oluşur. Diş taşları yapısı gereği pürüzlü olduğu için daha çok bakteri ve gıda artığını üstüne çeker. Bu kısır döngü, eninde sonunda kaçınılmaz bir şekilde diş eti hastalıklarına neden olur.</p>
                         <p>Diş taşı temizliği (Detertraj), bu sertleşmiş zararlı yapıların profesyonel havalı ve su soğutmalı ultrasonik el aletleri kullanılarak mineye kesinlikle zarar vermeden diş yüzeyinden uzaklaştırılması sanatıdır. Halk arasında "diş taşı temizliği diş minesini çizer" şeklinde dolaşan şehir efsanesi tamamen yanlıştır. Aslında temizlenmeyen diş taşı, diş eti çekilmelerine ve dişin destek kemik dokusunun (alveol kemiği) eriyerek tamamen sağlıklı dişlerin bile sallanıp düşmesine yol açar.</p>
                         <p>Araştırmalar, diş eti iltihabının ve orada üreyen zararlı bakterilerin sadece ağız bölgesini değil, kan dolaşımına katılarak kalp damar hastalıklarını, diyabet (şeker) hastalığını tetiklediğini ve hatta hamilelerde erken doğum ya da düşük riskini artırdığını bilimsel olarak kanıtlamıştır. Bu sebeple rutin bir diş taşı temizliği aslında basit bir temizlik değil, kritik bir genel sağlık koruma işlemidir.</p>
                         <p>Temizlik sonrasında uygulanan polisaj (cişataş cilası ve parlatma) işlemi ile diş üzerinde çay, kahve, ve sigara gibi ajanların bıraktığı dışsal sarı-kahverengi renklenmeler tamamen temizlenir, dişin orijinal beyazlığı ve ışıltısı ortaya çıkarılır. Kliniğimizde 6 ayda veya ideal olarak yılda 1 kez tüm hastalarımıza düzenli olarak bakım seansları önerilmektedir.</p>
-        
-                    </div>
-                    <div class="treatment-detail-card">
-                        <h3><i class="ph ph-list-numbers"></i> Tedavi Süreci</h3>
-                        <div class="treatment-steps">
-                            
+        `,
+        steps: `
                             <div class="treatment-step"><span class="step-number">1</span>
                                 <div><strong>Detaylı Muayene ve Diş Eti Ölçümleri</strong>
                                     <p>Diş eti hastalıkları uzmanımız, periodontal sond denilen özel bir milimetrik ölçüm aletiyle diş etlerinizdeki cebin derinliğini, kanama seviyesini ve çekilme miktarlarını inceler.</p>
@@ -320,65 +134,29 @@
                                     <p>Çay, kahve lekelerinin yok edilmesi için özel cila patları veya daha ileri teknoloji hava-su-toz sprey püskürten (Air-Flow) cihazı ile diş tamamen parlatılır. Yeniden tartar tutunması geciktirilmiş olur.</p>
                                 </div>
                             </div>
-        
-                        </div>
-                    </div>
-                    <div class="treatment-detail-card">
-                        <h3><i class="ph ph-check-square"></i> Avantajlar ve Faydaları</h3>
-                        <ul class="treatment-advantages">
-                            
+        `,
+        advantages: `
                             <li><i class="ph-fill ph-check-circle"></i> Fırçalarken veya kendiliğinden oluşan kanamalı iltihaplı diş etlerinin tamamen iyileşmesi</li>
                             <li><i class="ph-fill ph-check-circle"></i> Toplumda çok sık yaşanan ve kişinin sosyal hayatını kötü etkileyen ağız kokusunun (Halitozis) kesin çözümü</li>
                             <li><i class="ph-fill ph-check-circle"></i> Lekelerden kurtulup dişlerin daha temiz, aydınlık ve orijinal renginde parlamasının sağlanması</li>
                             <li><i class="ph-fill ph-check-circle"></i> Çürüksüz, sağlıklı dişlerin ilerleyen yaşlarda sallanarak kendi kendine dökülmesinin önlenmesi</li>
                             <li><i class="ph-fill ph-check-circle"></i> Kan dolaşımına giden bakteriler yok edildiği için vücudun bağışıklık ve genel kalp-damar sağlığının korunması</li>
-        
-                        </ul>
-                        
-                        <h3 style="margin-top: 30px;"><i class="ph ph-currency-circle-dollar"></i> Tedavi Fiyatlandırması</h3>
-                        <div class="price-range">
-                            <p>TDB (Türk Dişhekimleri Birliği) fiyat tarifesi baz alınarak, vakanın kompleks durumuna ve kullanılan güncel malzemeye göre kişiye özel planlama yapılır.</p>
-                            <div class="price-box">
-                                <span class="price-label">Başlangıç Fiyatı</span>
-                                <span class="price-value">Klinik Muayene Sonrası</span>
-                            </div>
-                            <p class="price-note"><i class="ph ph-info"></i> Kliniğimizde ödeme kolaylıkları ve vade farksız taksit seçeneklerimiz mevcuttur.</p>
-                        </div>
-                    </div>
-                </div>
-                <div style="text-align: center; margin-top: 40px;">
-                    <a href="randevu.html" class="btn btn-primary btn-lg"><i class="ph ph-calendar-plus"></i> Tartar Güşüşünüz İçin Randevu Alın</a>
-                </div>
-            </div>
-    
-            <!-- Ortodonti ve Şeffaf Plak Tedavisi -->
-            <div class="treatment-content " id="tab-ortodonti">
-                <div class="treatment-hero" style="flex-direction: column; align-items: stretch;">
-                    <div style="width: 100%; height: 350px; overflow: hidden; border-radius: var(--radius-lg); margin-bottom: 24px;">
-                        <img src="images/services/ortodonti.png" alt="Ortodonti ve Şeffaf Plak Tedavisi - Mier Dental Clinic" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 20px;">
-                        <div class="treatment-hero-icon"><i class="ph-fill ph-smiley"></i></div>
-                        <div>
-                            <h2>Ortodonti ve Şeffaf Plak Tedavisi</h2>
-                            <p class="treatment-tagline">Görünmez çözümler, mükemmel simetride dizilmiş dişler</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="treatment-grid">
-                    <div class="treatment-detail-card" style="grid-column: 1 / -1; padding: 40px;">
-                        
+        `
+    },
+    {
+        id: 'tab-ortodonti',
+        icon: 'ph-smiley',
+        title: 'Ortodonti ve Şeffaf Plak Tedavisi',
+        tagline: 'Görünmez çözümler, mükemmel simetride dizilmiş dişler',
+        image: 'images/services/ortodonti.png',
+        content: `
                         <h3><i class="ph-info"></i> Tedavi Hakkında Kapsamlı Bilgi</h3>
                         <p>Ortodonti; dişlerin çene kemikleri üzerindeki dizilim bozukluklarını (çapraşıklık), ayrık dişleri, alt ve üst çenelerin birbiriyle olan kapanış dengesizliklerini ve yüz estetiğini ideal haline getirmeyi hedefleyen çok özel bir diş hekimliği uzmanlık dalıdır. Düzgün sıralanmış dişler, sadece kusursuz ve çekici bir gülüş sağlamakla kalmaz, aynı zamanda dişlerin çok daha kolay ve düzgün fırçalanmasını mümkün kılarak ömür boyu çürüklerden ve diş eti hastalıklarından korunmanızı garantiler. Kapanış bozuklukları düzeltildiğinde çene eklem ağrıları, baş ağrısı ve çiğneme zorlukları da ortadan kalkar.</p>
                         <p>Geçmiş yıllarda "diş teli takmak" çocukluk yıllarında katlanılması gereken ve ağır metal görüntüsüyle sosyal hayatta utanma hissi yaratan meşakkatli bir süreçken; günümüz modern ortodontisinde estetikte sınır tanımayan muazzam teknolojiler mevcuttur. Tel takma fikrine sıcak bakmayan hastalar için uzay çağı teknolojisi olarak anılan <strong>Şeffaf Plak (Invisalign) Tedavisi</strong> en devrimsel yeniliklerden biridir. Günlük hayatta tamamen görünmez olan ve istenildiği zaman (yemek yerken veya özel bir davette) çıkarılabilen bu şeffaf plaklar sayesinde tedavi süreci yüksek yaşam konforuyla devam eder.</p>
                         <p>Klasik tedavilerde dahi estetik beklentiler için diş rengiyle birebir aynı olan Seramik / Porselen Braketler kullanılarak dışarıdan belli olmayan tedavi imkanı sunulmaktadır. İleri kapanış bozukluklarında ve geleneksel tel takılmasının elzem olduğu yetişkin ve ergenlerde metal braketler halen hızlı ve kesin sonuç veren çok saygın bir tedavi yöntemidir.</p>
                         <p>Sanılanın aksine, ortodonti yalnızca çocuklara ve büyüme çağındaki ergenlere uygulanan bir tedavi değildir. Çevre kemik dokusu sağlıklı olan herkese, 50-60'lı yaşlarda bile başarıyla ve mükemmel sonuçlarla güvenle ortodonti ve şeffaf plak uygulaması yapılabilmektedir.</p>
-        
-                    </div>
-                    <div class="treatment-detail-card">
-                        <h3><i class="ph ph-list-numbers"></i> Tedavi Süreci</h3>
-                        <div class="treatment-steps">
-                            
+        `,
+        steps: `
                             <div class="treatment-step"><span class="step-number">1</span>
                                 <div><strong>Analiz, Panoramik Sefalometrik Çekimler ve Fotoğraflama (Kayıt)</strong>
                                     <p>Ortodonti uzmanımız (Ortodontist) hastanın tüm ağız dışı, yüz simetrisi, profil ve ağız içi detaylı asimetri fotoğraflarını çeker. Özel ortodontik röntgenlerle kemiklerin birbirine göre açıları dijital olarak programda analiz edilir.</p>
@@ -399,65 +177,29 @@
                                     <p>Vakanın durumuna göre 6 ay ile 2 yıl arasında süren tedavi sırasında aylık yönlendirici ufak müdahaleler yapılır. İstenen estetik düz dizilime ulaşıldığında, tellerin çıkmasının ardından ömür boyu yamulmayı önlemek için dişi arkasından koruyucu gizli teller (retainer) eklenir.</p>
                                 </div>
                             </div>
-        
-                        </div>
-                    </div>
-                    <div class="treatment-detail-card">
-                        <h3><i class="ph ph-check-square"></i> Avantajlar ve Faydaları</h3>
-                        <ul class="treatment-advantages">
-                            
+        `,
+        advantages: `
                             <li><i class="ph-fill ph-check-circle"></i> Düzenli dişler, yüzdeki kas yapısını destekler ve profil simetrisini (çene orantısını) olağanüstü güzelleştirir</li>
                             <li><i class="ph-fill ph-check-circle"></i> Kendi doğal dişlerinizi ufak bir kesim işlemi dahi yapmadan, en biyolojik yöntemle ömür boyu koruyarak estetik çözüm</li>
                             <li><i class="ph-fill ph-check-circle"></i> Çapraşıkken fırçanın ulaşamadığı derin oyuklar düzeldiği an, çürük oluşum hızı hayat boyu en aza iner</li>
                             <li><i class="ph-fill ph-check-circle"></i> Şeffaf Plak tedavisi sayesinde sosyal yaşantı etkilenmez; sınırsız yeme özgürlüğü ve kolay çıkarıp takma konforu</li>
                             <li><i class="ph-fill ph-check-circle"></i> Sindirim sisteminin temeli olan düzgün öğütme dengesi yerine gelir, eklem kilitlenmelerinin veya çene tıkırdamalarının önüne geçilir</li>
-        
-                        </ul>
-                        
-                        <h3 style="margin-top: 30px;"><i class="ph ph-currency-circle-dollar"></i> Tedavi Fiyatlandırması</h3>
-                        <div class="price-range">
-                            <p>TDB (Türk Dişhekimleri Birliği) fiyat tarifesi baz alınarak, vakanın kompleks durumuna ve kullanılan güncel malzemeye göre kişiye özel planlama yapılır.</p>
-                            <div class="price-box">
-                                <span class="price-label">Başlangıç Fiyatı</span>
-                                <span class="price-value">Klinik Muayene Sonrası</span>
-                            </div>
-                            <p class="price-note"><i class="ph ph-info"></i> Kliniğimizde ödeme kolaylıkları ve vade farksız taksit seçeneklerimiz mevcuttur.</p>
-                        </div>
-                    </div>
-                </div>
-                <div style="text-align: center; margin-top: 40px;">
-                    <a href="randevu.html" class="btn btn-primary btn-lg"><i class="ph ph-calendar-plus"></i> Ortodonti Güşüşünüz İçin Randevu Alın</a>
-                </div>
-            </div>
-    
-            <!-- Estetik Diş Hekimliği (Gülüş Tasarımı) -->
-            <div class="treatment-content " id="tab-estetik">
-                <div class="treatment-hero" style="flex-direction: column; align-items: stretch;">
-                    <div style="width: 100%; height: 350px; overflow: hidden; border-radius: var(--radius-lg); margin-bottom: 24px;">
-                        <img src="images/services/gulus_tasarimi.png" alt="Estetik Diş Hekimliği (Gülüş Tasarımı) - Mier Dental Clinic" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 20px;">
-                        <div class="treatment-hero-icon"><i class="ph-fill ph-diamond"></i></div>
-                        <div>
-                            <h2>Estetik Diş Hekimliği (Gülüş Tasarımı)</h2>
-                            <p class="treatment-tagline">Kusursuz, aydınlık, altın oranlara sahip Hollywood Gülüşü</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="treatment-grid">
-                    <div class="treatment-detail-card" style="grid-column: 1 / -1; padding: 40px;">
-                        
+        `
+    },
+    {
+        id: 'tab-estetik',
+        icon: 'ph-diamond',
+        title: 'Estetik Diş Hekimliği (Gülüş Tasarımı)',
+        tagline: 'Kusursuz, aydınlık, altın oranlara sahip Hollywood Gülüşü',
+        image: 'images/services/gulus_tasarimi.png',
+        content: `
                         <h3><i class="ph-info"></i> Tedavi Hakkında Kapsamlı Bilgi</h3>
                         <p>Estetik diş hekimliği (Kozmetik Diş Hekimliği), bir bireyin dişlerini, dudak ve yüz proporsiyonunu matematik ve sanatın estetik kurallarına göre değerlendirerek kusursuz bir uyum yakalamayı amaçlayan ileri düzey uygulamalar bütünüdür. <strong>Gülüş Tasarımı (Smile Design)</strong>, kişiye özgü çekilen detaylı fotoğraf ve videolar ışığında özel yazılımlarda sadece size has bir diş hatları belirlenmesi; daha sert, daha dişi veya neşe veren daha enerjik diş formlarının kişinin karakteriyle uyuşmasının hedeflenmesi sürecidir.</p>
                         <p>Bu yolda kullanılan en popüler ve etkili tedavi yöntemi <strong>Porselen Laminat Veneer (Yaprak Porselen)</strong> uygulamasıdır. Diş gıcırdatması kırığı, aşınma, renkleşme, ufak çapraşıklıklar, ön dişler arasındaki aralıklar (diastema) gibi sorunlarda; dişin sadece ön yüzeyinden yarım milimetreden daha az (kontakt lens kalınlığında) hafif bir pürüzlendirme yapılarak ya da bazen dişe hiç dokunulmadan (Prepless Veneer), mükemmel pürüzsüzlükte ince porselenler şeffaf diş yapışkanlarıyla minenin ön yüzeyine çok sıkı şekilde tutturulur.</p>
                         <p>Aynı şekilde doğal dişi andıran yüksek ışık geçirgenliği ve doku uyumu sayesinde metal desteksiz, ışıl ışıl duran, diş eti altında morarma yapmayan <strong>Zirkonyum Tam Kaplamalar</strong> (Zirconia Crowns) veya <strong>E-max / Empress Tam Seramik Kronlar</strong> ile estetik sınırları zorlayan yapaylıktan tamamen uzak çok doğal diş restorasyonlarına sahip olabilirsiniz.</p>
                         <p>Kendi diş şeklinden ve anatomisinden oldukça memnun olan ancak dişlerinin tonunu birkaç seviye parlak, beyaz ve taze göstermek isteyen hastalarımıza hızlı sonuç veren <strong>Klinik Tipi Ofis Diş Beyazlatma (Bleaching)</strong> işlemini önermekteyiz. Dişlere uygulanan özel beyazlatma ajanı (Hidrojen veya Karbamid Peroksit içerikli jeller) ileri lazer/led ışık kaynaklarıyla aktive edilir ve sadece 1 saatlik tek seansın sonunda kahve, çay, yaşlılık gibi pigment lekelenmelerini oksijen ile çözündürerek anında 3-4 tona kadar kesin beyazlama garantisi sunar.</p>
-        
-                    </div>
-                    <div class="treatment-detail-card">
-                        <h3><i class="ph ph-list-numbers"></i> Tedavi Süreci</h3>
-                        <div class="treatment-steps">
-                            
+        `,
+        steps: `
                             <div class="treatment-step"><span class="step-number">1</span>
                                 <div><strong>Estetik Beklenti Analizi ve Dijital Mock-up (Prova) Deneyimi</strong>
                                     <p>İşleme hiç başlanmadan, dişleriniz kesilmeden önce özel reçinelerle tasarlanan yeni diş görünümünüz ağzınıza geçici olarak uygulanır (Mock-up). Gecenin sonuna benzeyen sürprizlerden kurtularak bitmiş halinin nasıl göründüğünü klinikte aynaya bakarak veya video çekerek siz onaylarsınız.</p>
@@ -478,63 +220,27 @@
                                     <p>Lamine yapraklar diş üzerine estetik reçine yapıştırıcı test patlarıyla provaya getirilir. Renk ve uyum kesinleştirdiğinde kalıcı rezin simanlarla (güçlü UV ışık yapıştırıcılarıyla) sızıntı olmayacak şekilde dişe mühürlenir. Aynı gün yemek yiyerek mükemmel Hollywood gülüşünüzle ayrılırsınız.</p>
                                 </div>
                             </div>
-        
-                        </div>
-                    </div>
-                    <div class="treatment-detail-card">
-                        <h3><i class="ph ph-check-square"></i> Avantajlar ve Faydaları</h3>
-                        <ul class="treatment-advantages">
-                            
+        `,
+        advantages: `
                             <li><i class="ph-fill ph-check-circle"></i> Çok kısa sürede (2 veya 3 randevu, ortalama 4-7 gün) radikal ve mucizevi değişim garantisi</li>
                             <li><i class="ph-fill ph-check-circle"></i> Sararmaz, kirlenmez. Laminaların yüzeyi çok iyi cilalanmış özel cam-seramik olduğu için çay veya sigara lekesi asla tutunmaz</li>
                             <li><i class="ph-fill ph-check-circle"></i> Kendini toplumdan gizleme (elle ağzı kapatma, gülümsemekten kaçınma) gibi sosyal kaygıların tamamen yok edilip tavan yapan bir özgüven duygusu</li>
                             <li><i class="ph-fill ph-check-circle"></i> Sadece ön dişler üzerinde değil, dudak ve yüz desteği sağlandığı için anti-aging (gençleştirici) dolgun simetrik profil algısının yükselmesi</li>
-        
-                        </ul>
-                        
-                        <h3 style="margin-top: 30px;"><i class="ph ph-currency-circle-dollar"></i> Tedavi Fiyatlandırması</h3>
-                        <div class="price-range">
-                            <p>TDB (Türk Dişhekimleri Birliği) fiyat tarifesi baz alınarak, vakanın kompleks durumuna ve kullanılan güncel malzemeye göre kişiye özel planlama yapılır.</p>
-                            <div class="price-box">
-                                <span class="price-label">Başlangıç Fiyatı</span>
-                                <span class="price-value">Klinik Muayene Sonrası</span>
-                            </div>
-                            <p class="price-note"><i class="ph ph-info"></i> Kliniğimizde ödeme kolaylıkları ve vade farksız taksit seçeneklerimiz mevcuttur.</p>
-                        </div>
-                    </div>
-                </div>
-                <div style="text-align: center; margin-top: 40px;">
-                    <a href="randevu.html" class="btn btn-primary btn-lg"><i class="ph ph-calendar-plus"></i> Estetik Güşüşünüz İçin Randevu Alın</a>
-                </div>
-            </div>
-    
-            <!-- Kanal Tedavisi (Endodonti) -->
-            <div class="treatment-content " id="tab-kanal">
-                <div class="treatment-hero" style="flex-direction: column; align-items: stretch;">
-                    <div style="width: 100%; height: 350px; overflow: hidden; border-radius: var(--radius-lg); margin-bottom: 24px;">
-                        <img src="images/services/kanal_tedavisi.png" alt="Kanal Tedavisi (Endodonti) - Mier Dental Clinic" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 20px;">
-                        <div class="treatment-hero-icon"><i class="ph-fill ph-first-aid-kit"></i></div>
-                        <div>
-                            <h2>Kanal Tedavisi (Endodonti)</h2>
-                            <p class="treatment-tagline">Geceleri uykudan uyandıran ağrıya son, orijinal dişinizi sonuna kadar koruyoruz</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="treatment-grid">
-                    <div class="treatment-detail-card" style="grid-column: 1 / -1; padding: 40px;">
-                        
+        `
+    },
+    {
+        id: 'tab-kanal',
+        icon: 'ph-first-aid-kit',
+        title: 'Kanal Tedavisi (Endodonti)',
+        tagline: 'Geceleri uykudan uyandıran ağrıya son, orijinal dişinizi sonuna kadar koruyoruz',
+        image: 'images/services/kanal_tedavisi.png',
+        content: `
                         <h3><i class="ph-info"></i> Tedavi Hakkında Kapsamlı Bilgi</h3>
                         <p>Kanal tedavisi ya da tıbbi adıyla Endodontik Tedavi; dişin en iç katmanında sert minenin altında korunan ve dişe hayat veren damar-sinir paketinin (pulpa dokusunun); derin çürükler, şiddetli darbeler (travma), veya tekrarlayan zorlu dental işlemler neticesinde iltihaplanıp geri döndürülemez bir şekilde hasar görmesi halinde yapılan bir organkoruma mikroskobik cerrahisidir. Şişmiş bir yüz, sıcak-soğuk uzun süren kalıcı sitem, yemek yerken baskıda ortaya çıkan keskin şiddetli sızı, zonklayarak geceleri uykudan uyandıran çekilmez bir diş ağrısı genellikle pulpadaki iltihabın açık habercisidir.</p>
                         <p>Teknolojinin yetersiz olduğu eski dönemlerde siniri ölmüş bu dişleri maalesef direk olarak çekmek tek çözümken, modern diş mikroskopları ve döner enstrümanlı kanal eğeleriyle (rotarary instruments) gerçekleştirilen yüksek başarılı tedavilerle o sorunlu dişi ağızda onlarca yıl sapasağlam daha tutabilmek mümkündür. <strong>"Kendi doğal dişiniz, her zaman üretilecek tüm yapay implant ve kaplamalardan daha değerlidir."</strong> prensibimiz gereği dişi çekmek yerine en ileri yöntemlerle kök kanallarını son teknoloji cihazlarla tedavi etmeyi tercih ediyoruz.</p>
                         <p>Halk arasında dilden dile dolaşan "Kanal tedavisi çok ağrılı ve eziyetli bir süreçtir" algısı, modern güçlü (bölgesel kök bloğu vs) anestezi yaklaşımlarıyla tamamen tarihe gömülmüştür. Uzman ellerde (Endodontist) doğru şekilde ve tamamen uyuşturularak yapılan bir kanal tedavisi, standart basit bir dolgu işleminden ne bir eksik ne bir fazla konforla hasta hiç bir hassasiyet hissetmeden tek veya iki seansta başarıyla tamamlanmaktadır.</p>
-        
-                    </div>
-                    <div class="treatment-detail-card">
-                        <h3><i class="ph ph-list-numbers"></i> Tedavi Süreci</h3>
-                        <div class="treatment-steps">
-                            
+        `,
+        steps: `
                             <div class="treatment-step"><span class="step-number">1</span>
                                 <div><strong>Dijital Radyografi (RVG) Teşhisi ve Total Bölgesel Uyuşturma</strong>
                                     <p>Hangi dişin sorunlu olduğu çeşitli termal, elektrikli testler ve düşük radyasyonlu özel diş kökü röntgenleriyle tespit edilir. Sonrasında dişin bağırıp çağıran sinir tellerindeki uyarı iletimi lokal anesteziyle anında tamamen bloke edilir. İşlem sonuna kadar "sıfır ağrı" sağlanır.</p>
@@ -555,18 +261,47 @@
                                     <p>İçi yuvadan arındırılan terleremiz bu kök kanallarının boşluğu tekrardan mikropların işgal edememesi için (gutta percha adlı reçine özlü) kalıcı, elastik ve vücut dostu özel doğal tıbbi materyallerle sıkıştırılarak hermetik (hava/sıvı almaz) şekilde tepeden tırnağa tamamen kapatılır. Ardından üst yapısına onley veya kompozit dolgusu yapılır.</p>
                                 </div>
                             </div>
-        
+        `,
+        advantages: `
+                            <li><i class="ph-fill ph-check-circle"></i> Çekilecek seviyedeki dişinizi kaybedip implant tedavisi için aylar boyu süren işlemler veya büyük kemik cerrahileri yaşamaktan kesin kurtuluş</li>
+                            <li><i class="ph-fill ph-check-circle"></i> Baş gösteren ve tüm çene bölgesini saran akut (şişlik, iltihap, acı) enfeksiyonun dakikalar içinde tamamen ortadan kaldırılması ve rahatlama hissi</li>
+                            <li><i class="ph-fill ph-check-circle"></i> Dişler çekildiğinde yer değiştirebilecek komşu dişlerin oluşturacağı ciddi çene eklem problemlerinin önüne geçme ve çene hizasını koruma</li>
+                            <li><i class="ph-fill ph-check-circle"></i> Üzerine yapılan gelişmiş porselen restorasyonlarla dişte hiçbir renk değişikliği olmadan estetikten taviz verilmemesi</li>
+        `
+    }
+];
+
+// Generate Full Treatment Grid Html for Each
+const buildTreatmentBox = (tab) => {
+    return `
+            <!-- ${tab.title} -->
+            <div class="treatment-content ${tab.id === 'tab-implant' ? 'active' : ''}" id="${tab.id}">
+                <div class="treatment-hero" style="flex-direction: column; align-items: stretch;">
+                    <div style="width: 100%; height: 350px; overflow: hidden; border-radius: var(--radius-lg); margin-bottom: 24px;">
+                        <img src="${tab.image}" alt="${tab.title} - Mier Dental Clinic" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 20px;">
+                        <div class="treatment-hero-icon"><i class="ph-fill ${tab.icon}"></i></div>
+                        <div>
+                            <h2>${tab.title}</h2>
+                            <p class="treatment-tagline">${tab.tagline}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="treatment-grid">
+                    <div class="treatment-detail-card" style="grid-column: 1 / -1; padding: 40px;">
+                        ${tab.content}
+                    </div>
+                    <div class="treatment-detail-card">
+                        <h3><i class="ph ph-list-numbers"></i> Tedavi Süreci</h3>
+                        <div class="treatment-steps">
+                            ${tab.steps}
                         </div>
                     </div>
                     <div class="treatment-detail-card">
                         <h3><i class="ph ph-check-square"></i> Avantajlar ve Faydaları</h3>
                         <ul class="treatment-advantages">
-                            
-                            <li><i class="ph-fill ph-check-circle"></i> Çekilecek seviyedeki dişinizi kaybedip implant tedavisi için aylar boyu süren işlemler veya büyük kemik cerrahileri yaşamaktan kesin kurtuluş</li>
-                            <li><i class="ph-fill ph-check-circle"></i> Baş gösteren ve tüm çene bölgesini saran akut (şişlik, iltihap, acı) enfeksiyonun dakikalar içinde tamamen ortadan kaldırılması ve rahatlama hissi</li>
-                            <li><i class="ph-fill ph-check-circle"></i> Dişler çekildiğinde yer değiştirebilecek komşu dişlerin oluşturacağı ciddi çene eklem problemlerinin önüne geçme ve çene hizasını koruma</li>
-                            <li><i class="ph-fill ph-check-circle"></i> Üzerine yapılan gelişmiş porselen restorasyonlarla dişte hiçbir renk değişikliği olmadan estetikten taviz verilmemesi</li>
-        
+                            ${tab.advantages}
                         </ul>
                         
                         <h3 style="margin-top: 30px;"><i class="ph ph-currency-circle-dollar"></i> Tedavi Fiyatlandırması</h3>
@@ -581,101 +316,18 @@
                     </div>
                 </div>
                 <div style="text-align: center; margin-top: 40px;">
-                    <a href="randevu.html" class="btn btn-primary btn-lg"><i class="ph ph-calendar-plus"></i> Kanal Güşüşünüz İçin Randevu Alın</a>
+                    <a href="randevu.html" class="btn btn-primary btn-lg"><i class="ph ph-calendar-plus"></i> ${tab.title.split(' ')[0]} Güşüşünüz İçin Randevu Alın</a>
                 </div>
             </div>
-    
-        </div>
-</div>
-    </section>
+    `;
+};
 
-    <!-- ===== CTA ===== -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content glass-card">
-                <div class="cta-text">
-                    <h2>Tedaviniz Hakkında Bilgi Almak İster Misiniz?</h2>
-                    <p>Ücretsiz ön muayene ile sizin için en uygun tedavi planını oluşturalım.</p>
-                </div>
-                <a href="randevu.html" class="btn btn-primary btn-lg"><i class="ph ph-calendar-plus"></i> Ücretsiz
-                    Muayene</a>
-            </div>
-        </div>
-    </section>
+const allHtml = tabs.map(tab => buildTreatmentBox(tab)).join('');
 
-    <!-- ===== FOOTER ===== -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="index.html" class="footer-logo"><i class="ph ph-tooth"></i><span>Mier <strong>Dental
-                                Clinic</strong></span></a>
-                    <p>Profesyonel diş hekimliğinin kurumsal adresi.</p>
-                    <div class="footer-social">
-                        <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
-                        <a href="#" aria-label="Facebook"><i class="ph ph-facebook-logo"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="ph ph-twitter-logo"></i></a>
-                    </div>
-                </div>
-                <div class="footer-links">
-                    <h4>Hızlı Erişim</h4>
-                    <ul>
-                        <li><a href="index.html">Ana Sayfa</a></li>
-                        <li><a href="tedavilerimiz.html">Tedavilerimiz</a></li>
-                        <li><a href="galeri.html">Galeri</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="sss.html">SSS</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h4>İletişim</h4>
-                    <ul>
-                        <li><i class="ph ph-map-pin"></i> İsmetpaşa Mah. Kenar Cad. Gün Işığı Sit. J1 Blok No:4CG,
-                            Bayrampaşa/İstanbul</li>
-                        <li><i class="ph ph-phone"></i> +90 (___) ___ __ __</li>
-                        <li><i class="ph ph-envelope"></i> info@mierdental.com</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Mier Dental Clinic. Tüm hakları saklıdır.</p>
-                <div class="footer-bottom-links">
-                    <a href="kvkk.html">KVKK Politikası</a>
-                    <a href="cerez-politikasi.html">Çerez Politikası</a>
-                    <a href="gizlilik.html">Gizlilik Sözleşmesi</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+// the region we want to replace starts after <!-- İmplant -->  and ends right before </section> before the CTA
+const regex = /<!-- İmplant -->[\s\S]*?(?=<\/div>\s*<\/section>\s*<!-- ===== CTA ===== -->)/;
 
-    <button class="back-to-top" id="backToTop" aria-label="Sayfa başına dön"><i class="ph ph-caret-up"></i></button>
-    <div class="cookie-banner" id="cookieBanner">
-        <div class="cookie-content">
-            <p><i class="ph ph-cookie"></i> Bu web sitesi çerezler kullanmaktadır. <a href="cerez-politikasi.html">Çerez politikamız</a></p>
-            <div class="cookie-buttons"><button class="btn btn-outline btn-sm" id="cookieReject">Reddet</button><button
-                    class="btn btn-primary btn-sm" id="cookieAccept">Kabul Et</button></div>
-        </div>
-    </div>
-    <script src="script.js"></script>
+const newHTML = html.replace(regex, allHtml + "\n        </div>\n");
 
-    <!-- WhatsApp Float -->
-    <a href="https://wa.me/905555555555?text=Merhaba,%20randevu%20almak%20istiyorum." class="whatsapp-float" target="_blank" aria-label="WhatsApp ile İletişime Geçin">
-        <i class="ph ph-whatsapp-logo"></i>
-    </a>
-
-
-    <!-- Google Translate Script -->
-    <div id="google_translate_element" style="display:none;"></div>
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'tr',
-                includedLanguages: 'tr,en,de,ar,ru,fr',
-                autoDisplay: false
-            }, 'google_translate_element');
-        }
-    </script>
-    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-</body>
-
-</html>
+fs.writeFileSync(file, newHTML, 'utf8');
+console.log('Update Complete.');
