@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hizmetlerimiz | Mier Dental Clinic</title>
+    <meta name="description"
+        content="Mier Dental Clinic hizmetleri: İmplant, dolgu, tartar temizliği, ortodonti, estetik diş hekimliği ve çocuk diş hekimliği.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web@2.0.3"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">
+                <svg width="200" height="44" viewBox="0 0 200 44" xmlns="http://www.w3.org/2000/svg">
+                    <g transform="translate(2, 4)">
+                        <path
+                            d="M18 2c-3.5 0-6 1-7.5 2.5C9 6 8 8.5 8 11.5c0 1.8.4 3.3.9 5 .6 2 1.2 4 1.2 6.2 0 3.2-.8 5.8-1.6 8.3-.8 2.8-1.2 5-.8 7 .4 1.6 1.6 2.5 2.8 2.5s2-.8 2.8-2.5c.8-2 1.6-4.5 1.6-7.4h4.2c0 2.9.8 5.4 1.6 7.4.8 1.7 1.6 2.5 2.8 2.5s2.4-.9 2.8-2.5c.4-2 0-4.2-.8-7-.8-2.5-1.6-5.1-1.6-8.3 0-2.2.6-4.2 1.2-6.2.5-1.7.9-3.2.9-5 0-3-1-5.5-2.5-7C24 3 21.5 2 18 2z"
+                            fill="#C9A96E" opacity="0.9" />
+                    </g>
+                    <text x="46" y="22" font-family="'Poppins', sans-serif" font-size="18" font-weight="800"
+                        fill="#253B5B" letter-spacing="1">MIER</text>
+                    <text x="46" y="38" font-family="'Poppins', sans-serif" font-size="11" font-weight="500"
+                        fill="#253B5B" letter-spacing="3" opacity="0.7">DENTAL CLINIC</text>
+                </svg>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Ana Sayfa</a></li>
+                <li class="nav-dropdown">
+                    <a href="index.html#hakkimizda" class="nav-link nav-link-dropdown">Hakkımızda <i
+                            class="ph ph-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+
+                        <li><a href="misyonumuz.html">Misyonumuz</a></li>
+                        <li><a href="vizyonumuz.html">Vizyonumuz</a></li>
+                        <li><a href="degerlerimiz.html">Değerlerimiz</a></li>
+                        <li><a href="neden-mier.html">Neden MİER?</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="hizmetler.html" class="nav-link nav-link-dropdown active">Hizmetler <i
+                            class="ph ph-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="hizmetler.html" class="active">Hizmetlerimiz</a></li>
+                        <li><a href="tedavilerimiz.html">Tedavilerimiz</a></li>
+                    </ul>
+                </li>
+                <li><a href="galeri.html" class="nav-link">Galeri</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="sss.html" class="nav-link">SSS</a></li>
+                <li><a href="iletisim.html" class="nav-link">İletişim</a></li>
+                <li><a href="randevu.html" class="nav-link nav-cta">Randevu Al</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle"
+                aria-label="Menüyü aç/kapat"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <!-- ===== PAGE BANNER ===== -->
+    <section class="page-banner">
+        <div class="container">
+            <div class="page-banner-content">
+                <span class="section-tag">Hizmetlerimiz</span>
+                <h1 class="page-banner-title">Diş Sağlığı <span class="gradient-text">Hizmetlerimiz</span></h1>
+                <p class="page-banner-subtitle">Geniş tedavi yelpazemizle her yaş grubuna profesyonel diş sağlığı
+                    hizmeti sunuyoruz.</p>
+                <div class="breadcrumb">
+                    <a href="index.html">Ana Sayfa</a>
+                    <i class="ph ph-caret-right"></i>
+                    <span>Hizmetlerimiz</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== HİZMETLER ===== -->
+    <section class="section services-section">
+        <div class="container">
+            <div class="services-grid">
+                <!-- Dolgu -->
+                <div class="service-card service-card--icon" data-aos="fade-up">
+                    <div class="service-icon"><i class="ph-fill ph-tooth"></i></div>
+                    <h3>Dolgu Tedavisi</h3>
+                    <p>Çürük ve hasarlı dişlerinizi estetik dolgu malzemeleriyle onarıyoruz. Kompozit ve porselen dolgu
+                        seçenekleriyle doğal görünüm sağlıyoruz.</p>
+                    <ul class="service-features">
+                        <li><i class="ph ph-check-circle"></i> Estetik kompozit dolgu</li>
+                        <li><i class="ph ph-check-circle"></i> Porselen inley/onley</li>
+                        <li><i class="ph ph-check-circle"></i> Ağrısız uygulama</li>
+                    </ul>
+                    <a href="randevu.html" class="service-link">Randevu Al <i class="ph ph-arrow-right"></i></a>
+                </div>
+
+                <!-- Tartar Temizliği -->
+                <div class="service-card service-card--icon" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon"><i class="ph-fill ph-sparkle"></i></div>
+                    <h3>Tartar Temizliği</h3>
+                    <p>Profesyonel diş taşı temizliği ile diş eti sağlığınızı koruyoruz. Ultrasonik cihazlarla ağrısız
+                        ve etkili temizlik.</p>
+                    <ul class="service-features">
+                        <li><i class="ph ph-check-circle"></i> Ultrasonik temizlik</li>
+                        <li><i class="ph ph-check-circle"></i> Diş eti bakımı</li>
+                        <li><i class="ph ph-check-circle"></i> Polisaj uygulaması</li>
+                    </ul>
+                    <a href="randevu.html" class="service-link">Randevu Al <i class="ph ph-arrow-right"></i></a>
+                </div>
+
+                <!-- İmplant -->
+                <div class="service-card service-card--icon" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon"><i class="ph-fill ph-wrench"></i></div>
+                    <h3>İmplant Tedavisi</h3>
+                    <p>Eksik dişleriniz için kalıcı ve doğal görünümlü çözüm. Titanyum implantlarla güçlü ve dayanıklı
+                        dişler kazanın.</p>
+                    <ul class="service-features">
+                        <li><i class="ph ph-check-circle"></i> 3D Tomografi ile planlama</li>
+                        <li><i class="ph ph-check-circle"></i> Titanyum implant</li>
+                        <li><i class="ph ph-check-circle"></i> 10 yıl garanti</li>
+                    </ul>
+                    <a href="randevu.html" class="service-link">Randevu Al <i class="ph ph-arrow-right"></i></a>
+                </div>
+
+                <!-- Ortodonti -->
+                <div class="service-card service-card--icon" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon"><i class="ph-fill ph-smiley"></i></div>
+                    <h3>Ortodonti</h3>
+                    <p>Düzgün ve sağlıklı dişler için modern ortodonti çözümleri. Metal braket, seramik braket ve şeffaf
+                        plak seçenekleri.</p>
+                    <ul class="service-features">
+                        <li><i class="ph ph-check-circle"></i> Şeffaf plak tedavisi</li>
+                        <li><i class="ph ph-check-circle"></i> Dijital tedavi planı</li>
+                        <li><i class="ph ph-check-circle"></i> Tüm yaş grupları</li>
+                    </ul>
+                    <a href="randevu.html" class="service-link">Randevu Al <i class="ph ph-arrow-right"></i></a>
+                </div>
+
+                <!-- Estetik Diş Hekimliği -->
+                <div class="service-card service-card--icon" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon"><i class="ph-fill ph-diamond"></i></div>
+                    <h3>Estetik Diş Hekimliği</h3>
+                    <p>Diş beyazlatma, porselen laminat veneer ve gülüş tasarımı hizmetlerimizle hayalinizdeki gülüşe
+                        kavuşun.</p>
+                    <ul class="service-features">
+                        <li><i class="ph ph-check-circle"></i> Gülüş tasarımı</li>
+                        <li><i class="ph ph-check-circle"></i> Porselen laminat</li>
+                        <li><i class="ph ph-check-circle"></i> Zirkonyum kaplama</li>
+                    </ul>
+                    <a href="randevu.html" class="service-link">Randevu Al <i class="ph ph-arrow-right"></i></a>
+                </div>
+
+                <!-- Çocuk Diş Hekimliği -->
+                <div class="service-card service-card--icon" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-icon"><i class="ph-fill ph-baby"></i></div>
+                    <h3>Çocuk Diş Hekimliği</h3>
+                    <p>Çocuklarınız için korkusuz ve eğlenceli tedavi ortamı. Pedodonti uzmanlarımız çocuğunuzun diş
+                        sağlığını korur.</p>
+                    <ul class="service-features">
+                        <li><i class="ph ph-check-circle"></i> Çocuk dostu ortam</li>
+                        <li><i class="ph ph-check-circle"></i> Fissür örtücü</li>
+                        <li><i class="ph ph-check-circle"></i> Flor uygulaması</li>
+                    </ul>
+                    <a href="randevu.html" class="service-link">Randevu Al <i class="ph ph-arrow-right"></i></a>
+                </div>
+
+                <!-- Endodonti -->
+                <div class="service-card service-card--icon" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon"><i class="ph-fill ph-first-aid-kit"></i></div>
+                    <h3>Kanal Tedavisi</h3>
+                    <p>İleri düzey enfeksiyon durumlarında dişinizi kurtarmak için kök kanal tedavisi uyguluyoruz.</p>
+                    <ul class="service-features">
+                        <li><i class="ph ph-check-circle"></i> Mikroskop altında tedavi</li>
+                        <li><i class="ph ph-check-circle"></i> Tek seansta tamamlama</li>
+                        <li><i class="ph ph-check-circle"></i> Ağrısız uygulama</li>
+                    </ul>
+                    <a href="randevu.html" class="service-link">Randevu Al <i class="ph ph-arrow-right"></i></a>
+                </div>
+
+                <!-- Protez -->
+                <div class="service-card service-card--icon" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon"><i class="ph-fill ph-puzzle-piece"></i></div>
+                    <h3>Protez Tedavisi</h3>
+                    <p>Sabit ve hareketli protez seçenekleri ile eksik dişlerinize fonksiyonel ve estetik çözümler
+                        sunuyoruz.</p>
+                    <ul class="service-features">
+                        <li><i class="ph ph-check-circle"></i> Tam protez</li>
+                        <li><i class="ph ph-check-circle"></i> Parsiyel protez</li>
+                        <li><i class="ph ph-check-circle"></i> İmplant üstü protez</li>
+                    </ul>
+                    <a href="randevu.html" class="service-link">Randevu Al <i class="ph ph-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Tedavilerimiz CTA -->
+            <div class="services-cta" data-aos="fade-up">
+                <div class="glass-card" style="padding: 40px; text-align: center;">
+                    <h3>Detaylı Tedavi Bilgileri İçin</h3>
+                    <p style="margin: 12px 0 24px;">Her tedavi hakkında süreç, fiyat ve sıkça sorulan soruları
+                        <strong>Tedavilerimiz</strong> sayfamızda bulabilirsiniz.
+                    </p>
+                    <a href="tedavilerimiz.html" class="btn btn-primary"><i class="ph ph-arrow-right"></i>
+                        Tedavilerimizi İnceleyin</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content glass-card">
+                <div class="cta-text">
+                    <h2>Sağlıklı Bir Gülüş İçin İlk Adımı Atın</h2>
+                    <p>Ücretsiz ön muayene için hemen randevu alın.</p>
+                </div>
+                <a href="randevu.html" class="btn btn-primary btn-lg"><i class="ph ph-calendar-plus"></i> Hemen Randevu
+                    Al</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo"><i class="ph ph-tooth"></i><span>Mier <strong>Dental
+                                Clinic</strong></span></a>
+                    <p>Profesyonel diş hekimliğinin kurumsal adresi.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="ph ph-facebook-logo"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="ph ph-twitter-logo"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Hızlı Erişim</h4>
+                    <ul>
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="hizmetler.html">Hizmetler</a></li>
+                        <li><a href="galeri.html">Galeri</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="sss.html">SSS</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>İletişim</h4>
+                    <ul>
+                        <li><i class="ph ph-map-pin"></i> İsmetpaşa Mah. Kenar Cad. Gün Işığı Sit. J1 Blok No:4CG,
+                            Bayrampaşa/İstanbul</li>
+                        <li><i class="ph ph-phone"></i> +90 (___) ___ __ __</li>
+                        <li><i class="ph ph-envelope"></i> info@mierdental.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mier Dental Clinic. Tüm hakları saklıdır.</p>
+                <div class="footer-bottom-links"><a href="#">KVKK</a><a href="#">Çerez Politikası</a><a
+                        href="#">Gizlilik</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Sayfa başına dön"><i class="ph ph-caret-up"></i></button>
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-content">
+            <p><i class="ph ph-cookie"></i> Bu web sitesi çerezler kullanmaktadır. <a href="#">Çerez politikamız</a></p>
+            <div class="cookie-buttons">
+                <button class="btn btn-outline btn-sm" id="cookieReject">Reddet</button>
+                <button class="btn btn-primary btn-sm" id="cookieAccept">Kabul Et</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
